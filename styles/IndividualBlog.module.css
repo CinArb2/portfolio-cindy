@@ -1,0 +1,10 @@
+.individualPost{
+  margin-block: 2rem;
+  min-width: 750px;
+}
+
+.containerImage{
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}

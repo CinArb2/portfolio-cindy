@@ -1,0 +1,41 @@
+
+.wrapperHero{
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+}
+
+.containerHero{
+  width: 90%;
+  max-width: 600px;
+}
+
+.containerImage{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 700px;
+  overflow: hidden;
+  z-index: -1;
+  /* filter: contrast(123%); */
+}
+
+.titleHero, .subtitleHero{
+  font-size: 5rem;
+  text-align: center;
+}
+
+.titleHero{
+  position: relative;
+  bottom: -50px;
+}
+
+.titleText{
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.subtitleHero{
+  position: relative;
+  bottom: 60px;
+}

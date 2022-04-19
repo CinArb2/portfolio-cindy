@@ -1,0 +1,19 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--heading-color);
+  font-size: 1.2rem;
+  margin: 1rem auto;
+  max-width: 1900px;
+  padding: 1rem;
+}
+
+.linkNavbar{
+  font-family: var(--font-heading);
+}
+
+.listLinks{
+  display: flex;
+  gap: 2rem;
+}
+

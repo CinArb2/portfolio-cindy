@@ -1,0 +1,17 @@
+.wrapperPortfolio{
+  padding-top: 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.containerPortfolio{
+  width: 70%;
+  min-height: 700px;
+}
+
+.textPortfolio{
+  font-size: 2rem;
+  margin: 3rem;
+  line-height: 2;
+}

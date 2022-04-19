@@ -1,0 +1,37 @@
+.wrapperAbout{
+  padding-top: 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.containerAbout{
+  width: 70%;
+  min-height: 700px;
+}
+
+.textAbout{
+  font-size: 2rem;
+  margin: 3rem;
+  line-height: 2;
+}
+
+.skills{
+  position: relative;
+  margin-top: 2rem;
+}
+
+.listSkills{
+  display: flex;
+  justify-content: space-around;
+  left: 0;
+  flex-wrap: wrap;
+}
+
+.iconsSkills{
+  display: block;
+  font-size: 7rem;
+  margin-block: 2rem;
+  margin-inline: 3rem;
+  color: #696870;
+}

@@ -1,0 +1,35 @@
+.footer{
+  background-color: var(--heading-color);
+  color: var(--body-color);
+  height: 70vh;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contacMe{
+  width: 90%;
+  max-width: 600px;
+}
+
+.textContactme{
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 4rem;
+}
+
+.listSocial{
+  width: 100%;
+  border-top: 3px solid var(--body-color);
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  padding-top: 2rem;
+}
+
+.socials{
+  font-size: 2rem;
+  margin-inline: 1rem;
+}
