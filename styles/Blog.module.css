@@ -11,9 +11,11 @@
 }
 
 .textBlog{
-  font-size: 2rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   margin: 3rem;
   line-height: 2;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .containerPosts{
@@ -21,6 +23,7 @@
   gap: 3rem;
   overflow-x: scroll;
   scrollbar-color: red;
+  margin-bottom: 2rem;
 }
 
 .containerPosts::-webkit-scrollbar-track {
@@ -37,4 +40,13 @@
   box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: var(--body-color);
   border: 5px solid #000;
+}
+
+.heading{
+  width: 100%;
+  border-bottom: 2px solid var(--heading-color);
+  padding-block: 1rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateX(-100px);
 }

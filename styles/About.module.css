@@ -3,17 +3,29 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
+  scroll-behavior: auto;
 }
 
 .containerAbout{
   width: 70%;
-  min-height: 700px;
+}
+
+.heading{
+  width: 100%;
+  border-bottom: 2px solid var(--heading-color);
+  padding-block: 1rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateX(-100px);
 }
 
 .textAbout{
-  font-size: 2rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   margin: 3rem;
   line-height: 2;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .skills{
@@ -22,10 +34,8 @@
 }
 
 .listSkills{
+  position: relative;
   display: flex;
-  justify-content: space-around;
-  left: 0;
-  flex-wrap: wrap;
 }
 
 .iconsSkills{

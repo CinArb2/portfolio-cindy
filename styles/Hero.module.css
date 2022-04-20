@@ -3,6 +3,10 @@
   min-height: 90vh;
   display: grid;
   place-items: center;
+  position: relative;
+  z-index: 10;
+  background-color: var(--body-color);
+  padding-top: 4rem;
 }
 
 .containerHero{
@@ -17,17 +21,38 @@
   min-height: 700px;
   overflow: hidden;
   z-index: -1;
-  /* filter: contrast(123%); */
+}
+
+.containerTitle{
+  position: relative;
+  bottom: -40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .titleHero, .subtitleHero{
-  font-size: 5rem;
+  font-size: 4.7rem;
   text-align: center;
 }
 
 .titleHero{
   position: relative;
-  bottom: -50px;
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.titleSpan{
+  position: relative;
+  font-size: 4rem;
+  font-family: var(--font-body);
+  font-weight: normal;
+  padding-left: 1rem;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
 .titleText{
@@ -38,4 +63,6 @@
 .subtitleHero{
   position: relative;
   bottom: 60px;
+  opacity: 0;
+  transform: translateY(100px);
 }

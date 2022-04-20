@@ -3,8 +3,8 @@
   justify-content: space-between;
   border-bottom: 2px solid var(--heading-color);
   font-size: 1.2rem;
-  margin: 1rem auto;
-  max-width: 1900px;
+  margin: 0 auto;
+  max-width: 1700px;
   padding: 1rem;
 }
 
@@ -12,8 +12,15 @@
   font-family: var(--font-heading);
 }
 
+.logo{
+  opacity: 0;
+  transform: translateY(60px);
+}
+
 .listLinks{
   display: flex;
   gap: 2rem;
+  opacity: 0;
+  transform: translateY(60px);
 }
 
