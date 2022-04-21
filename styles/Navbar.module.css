@@ -4,6 +4,7 @@
   border-bottom: 2px solid var(--heading-color);
   font-size: 1.2rem;
   margin: 0 auto;
+  width: 90%;
   max-width: 1700px;
   padding: 1rem;
 }
@@ -11,6 +12,7 @@
 .linkNavbar{
   font-family: var(--font-heading);
 }
+
 
 .logo{
   opacity: 0;

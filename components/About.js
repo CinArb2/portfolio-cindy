@@ -8,7 +8,8 @@ import { SiNextdotjs, SiStyledcomponents, SiRedux } from 'react-icons/si';
 import { BsBootstrap } from 'react-icons/bs';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import CursorContext from '../context/CursorContext';
 
 const About = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -16,7 +17,8 @@ const About = () => {
   const box2 = useRef(null);
   const box3 = useRef(null);
   const box4 = useRef(null);
-  
+  const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
+  const [show, setShow] = useState(false)
   
   useEffect(() => {
     const slider = box4.current;
@@ -54,6 +56,15 @@ const About = () => {
     });
   }, []);
 
+  const handleEnter = () => {
+    handleMouseEnter()
+  }
+
+  const handleMouseLeave = () => {
+    handleMouseLeaving()
+  }
+
+
   return (
     <section
       className={styles.wrapperAbout}
@@ -62,50 +73,80 @@ const About = () => {
     >
       <div className={styles.containerAbout}>
         
-        <h2 className={styles.heading}  ref={box2}>01/About</h2>
+        <h2 className={styles.heading}
+            onMouseEnter={handleEnter}
+            onMouseLeave={handleMouseLeave}
+          ref={box2}>01/About</h2>
         <p className={styles.textAbout} ref={box3}>
           Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
         </p>
         <div className={styles.skills}>
           <h2>Skills</h2>
           <div className={styles.listSkills} ref={box4}>
-            <span className={styles.iconsSkills}>
-              <AiOutlineHtml5 />
-            </span>
-            <span className={styles.iconsSkills}>
-              <DiCss3/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <IoLogoJavascript/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <GrReactjs/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <FaGitAlt/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <AiFillGithub/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <SiNextdotjs/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <BsBootstrap/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <SiStyledcomponents/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <SiRedux/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <DiResponsive/>
-            </span>
-            <span className={styles.iconsSkills}>
-              <DiSass/>
-            </span>
-            
+            <div className={styles.iconCard}
+              onMouseEnter={() => setShow(true)}
+              onMouseLeave={()=>setShow(false)}
+            >
+              <span className={`${styles.iconsTag} ${show ? styles.show : ''}`}>HTML</span>
+              <span className={styles.iconsSkills}>
+                <AiOutlineHtml5 />
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <DiCss3/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <IoLogoJavascript/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <GrReactjs/>
+              </span>
+            </div>
+            <div>
+                <span className={styles.iconsSkills}>
+                <FaGitAlt/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <AiFillGithub/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <SiNextdotjs/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <BsBootstrap/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <SiStyledcomponents/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <SiRedux/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <DiResponsive/>
+              </span>
+            </div>
+            <div>
+              <span className={styles.iconsSkills}>
+                <DiSass/>
+              </span>
+            </div>
           </div>
         </div>
       </div>

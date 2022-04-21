@@ -1,13 +1,38 @@
 import Head from 'next/head'
+import { useContext, useEffect, useRef, useState } from 'react'
 import About from '../components/About'
 import Blog from '../components/Blog'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 import Portfolio from '../components/Portfolio'
 import styles from '../styles/Home.module.css'
+import { gsap } from "gsap";
+import CursorContext  from '../context/CursorContext'
 
 export default function Home({ devDotToPosts }) {
+  const cursor = useRef(null)
+  const follower = useRef(null)
+  const { grow } = useContext(CursorContext)
   
+  useEffect(() => {
+    document.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+
+      const mouseX = clientX;
+      const mouseY = clientY;
+      
+      cursor.current.style.transform = `translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)`
+      
+      gsap.to(follower.current,
+        {
+          transform: `translate3d(${mouseX - follower.current.clientWidth / 2}px, ${mouseY - follower.current.clientHeight / 2}px, 0)`,
+          ease: "none",
+          stagger: 0.1,
+        })
+    })
+  }, [])
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -21,6 +46,8 @@ export default function Home({ devDotToPosts }) {
         <Portfolio />
         <Blog data={devDotToPosts}/>
       </Layout>
+      <div className={styles.cursor} ref={cursor}></div>
+      <div className={`${styles.follower} ${grow ? styles.grow : ''}`} ref={follower}></div>
     </div>
   )
 }

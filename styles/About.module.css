@@ -3,12 +3,16 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow-x: hidden;
   scroll-behavior: auto;
 }
 
 .containerAbout{
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
 }
 
 .heading{
@@ -33,15 +37,45 @@
   margin-top: 2rem;
 }
 
+.skills h2{
+  padding-bottom: 2rem;
+}
+
 .listSkills{
   position: relative;
   display: flex;
+  line-height: 0.5;
 }
 
 .iconsSkills{
+  padding: 1rem;
+  border-radius: 50%;
   display: block;
   font-size: 7rem;
   margin-block: 2rem;
   margin-inline: 3rem;
   color: #696870;
+  transition: transform 400ms ease-in-out,
+   color 400ms ease-in-out
+  ;
+}
+
+.iconsSkills:hover{
+  transform: scale(1.4);
+  color: #98C1B9;
+}
+
+.iconCard{
+  position: relative;
+}
+
+.iconsTag{
+  position: absolute;
+  top: 0;
+  right: 50%;
+  opacity: 0;
+}
+
+.iconsTag.show{
+  opacity: 1;
 }

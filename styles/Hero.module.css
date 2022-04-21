@@ -12,6 +12,7 @@
 .containerHero{
   width: 90%;
   max-width: 600px;
+  
 }
 
 .containerImage{
@@ -33,6 +34,8 @@
   justify-content: center;
   line-height: 1;
 }
+
+
 
 .titleHero, .subtitleHero{
   font-size: 4.7rem;
