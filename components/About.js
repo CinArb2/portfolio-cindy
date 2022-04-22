@@ -1,15 +1,10 @@
 import styles from '../styles/About.module.css'
-import { AiOutlineHtml5, AiFillGithub } from 'react-icons/ai';
-import { DiCss3, DiResponsive, DiSass } from 'react-icons/di';
-import { IoLogoJavascript } from 'react-icons/io';
-import { GrReactjs, GrWifiNone } from 'react-icons/gr';
-import { FaGitAlt } from 'react-icons/fa';
-import { SiNextdotjs, SiStyledcomponents, SiRedux } from 'react-icons/si';
-import { BsBootstrap } from 'react-icons/bs';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useContext, useEffect, useRef, useState } from "react";
 import CursorContext from '../context/CursorContext';
+import Icons from './Icons'
+import icons from '../helpers/Icons'
 
 const About = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -18,7 +13,7 @@ const About = () => {
   const box3 = useRef(null);
   const box4 = useRef(null);
   const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState('')
   
   useEffect(() => {
     const slider = box4.current;
@@ -74,79 +69,34 @@ const About = () => {
       <div className={styles.containerAbout}>
         
         <h2 className={styles.heading}
+          ref={box2}>
+          <span
             onMouseEnter={handleEnter}
             onMouseLeave={handleMouseLeave}
-          ref={box2}>01/About</h2>
+          >
+            01/About
+          </span>
+        </h2>
         <p className={styles.textAbout} ref={box3}>
           Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
         </p>
         <div className={styles.skills}>
           <h2>Skills</h2>
           <div className={styles.listSkills} ref={box4}>
-            <div className={styles.iconCard}
-              onMouseEnter={() => setShow(true)}
-              onMouseLeave={()=>setShow(false)}
-            >
-              <span className={`${styles.iconsTag} ${show ? styles.show : ''}`}>HTML</span>
-              <span className={styles.iconsSkills}>
-                <AiOutlineHtml5 />
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <DiCss3/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <IoLogoJavascript/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <GrReactjs/>
-              </span>
-            </div>
-            <div>
-                <span className={styles.iconsSkills}>
-                <FaGitAlt/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <AiFillGithub/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <SiNextdotjs/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <BsBootstrap/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <SiStyledcomponents/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <SiRedux/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <DiResponsive/>
-              </span>
-            </div>
-            <div>
-              <span className={styles.iconsSkills}>
-                <DiSass/>
-              </span>
-            </div>
+            {
+              icons.map((iconInfo) => (
+                <div className={styles.iconCard}
+                  key={iconInfo.id}
+                  onMouseEnter={() => setShow(iconInfo.id)}
+                  onMouseLeave={()=> setShow('')}
+                >
+                  <Icons
+                    iconInfo={iconInfo}
+                    show={show}
+                  />
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>

@@ -163,6 +163,22 @@
   border: none;
 }
 
+.paperBg{
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 998;
+  background-image: url('../public/paperBg.jpeg');
+  background-position: 50% 50%;
+  background-size: auto;
+  opacity: .2;
+  user-select: none;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

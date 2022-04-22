@@ -57,6 +57,7 @@ body {
   font-family: var(--font-body);
   overflow-x: hidden;
   cursor: none;
+  position: relative;
 }
 
 h1, h2, h3{

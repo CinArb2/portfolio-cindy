@@ -47,35 +47,16 @@
   line-height: 0.5;
 }
 
-.iconsSkills{
-  padding: 1rem;
-  border-radius: 50%;
-  display: block;
-  font-size: 7rem;
-  margin-block: 2rem;
-  margin-inline: 3rem;
-  color: #696870;
-  transition: transform 400ms ease-in-out,
-   color 400ms ease-in-out
-  ;
-}
-
-.iconsSkills:hover{
-  transform: scale(1.4);
-  color: #98C1B9;
-}
-
 .iconCard{
+  padding: 2rem;
+  margin-top: 2rem;
   position: relative;
+  text-align: center;
 }
 
-.iconsTag{
-  position: absolute;
-  top: 0;
-  right: 50%;
-  opacity: 0;
-}
-
-.iconsTag.show{
-  opacity: 1;
+.iconCard:hover{
+  background-image: url('../public/stamp.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
