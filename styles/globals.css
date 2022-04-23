@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans&display=swap');
 
 
 :root{
-  --heading-color: #080808;
-  --body-color: #f4f0ec;
+  --heading-color: #403f3f;
+  --body-color: white;
   --light-gray: #938f90;
-  --font-body: 'Open Sans', sans-serif;
-  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
 }
 
 /* Box sizing rules */
@@ -58,6 +58,7 @@ body {
   overflow-x: hidden;
   cursor: none;
   position: relative;
+  margin: 0.2rem;
 }
 
 h1, h2, h3{

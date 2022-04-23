@@ -3,15 +3,16 @@ import styles from '../styles/Project.module.css'
 import Image from 'next/image'
 import { BsArrowUpRight } from 'react-icons/bs';
 
-const Project = ({picture, tags, title, children}) => {
+const Project = ({ picture, tags, title, children }) => {
+  
   return (
     <div className={styles.project}>
       <div className={styles.containerImage}>
         <Image
           src={picture}
           alt="project blog"
-          objectFit="cover"
-          layout="fill"
+          objectFit="contain"
+          layout="responsive"
           />
       </div>
       <div className={styles.projectBody}>

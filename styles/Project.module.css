@@ -1,21 +1,20 @@
-.containerImage{
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  min-height: 350px;
-  overflow: hidden;
-  z-index: -1;
-  filter: contrast(123%);
-}
-
 
 .project{
-  max-width: 1200px;
+  max-width: 1500px;
+  min-height: 50vh;
   margin: 4rem auto;
   display: flex;
-  gap: 3rem;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  gap: 2rem;
+}
+
+.containerImage{
+  position: relative;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.containerImage img{
+  object-fit: contain;
 }
 
 .projectBody{

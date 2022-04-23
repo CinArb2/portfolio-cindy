@@ -8,47 +8,34 @@ import icons from '../helpers/Icons'
 
 const About = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const box1 = useRef(null);
-  const box2 = useRef(null);
-  const box3 = useRef(null);
-  const box4 = useRef(null);
+  const section = useRef(null);
+  const title = useRef(null);
+  const text = useRef(null);
   const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
   const [show, setShow] = useState('')
+  const [gif, setGif] = useState('')
   
   useEffect(() => {
-    const slider = box4.current;
-    const totalScroll = slider.scrollWidth - slider.offsetWidth;
     
-    gsap.to(box2.current, {
+    gsap.to(title.current, {
       opacity: 1,
       x: 0,
       duration: 1,
       scrollTrigger: {
-        trigger: box1.current,
+        trigger: section.current,
         start: "top center",
       },
     });
-    gsap.to(box3.current, {
+    gsap.to(text.current, {
       opacity: 1,
-      y: 0,
       duration: 1,
       scrollTrigger: {
-        trigger: box1.current,
+        trigger: section.current,
         start: "top center",
       },
     });
-    gsap.to(slider, {
-      x: () => -totalScroll,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: box1.current,
-        pin: true,
-        scrub: 1,
-        start: "center center",
-        end: () => '+=' + totalScroll,
-        refreshPriority: 3,
-      },
-    });
+    
+    
   }, []);
 
   const handleEnter = () => {
@@ -64,40 +51,38 @@ const About = () => {
     <section
       className={styles.wrapperAbout}
       id='about'
-      ref={box1}
-    >
+      ref={section}>
       <div className={styles.containerAbout}>
-        
-        <h2 className={styles.heading}
-          ref={box2}>
-          <span
-            onMouseEnter={handleEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            01/About
-          </span>
-        </h2>
-        <p className={styles.textAbout} ref={box3}>
+        <p className={styles.textAbout} ref={text}>
           Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
         </p>
-        <div className={styles.skills}>
-          <h2>Skills</h2>
-          <div className={styles.listSkills} ref={box4}>
-            {
-              icons.map((iconInfo) => (
-                <div className={styles.iconCard}
-                  key={iconInfo.id}
-                  onMouseEnter={() => setShow(iconInfo.id)}
-                  onMouseLeave={()=> setShow('')}
-                >
-                  <Icons
-                    iconInfo={iconInfo}
-                    show={show}
-                  />
-                </div>
-              ))
-            }
-          </div>
+        <h2 className={styles.heading}
+          ref={title}
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleMouseLeave}
+        >Ab
+          <span className={styles.asterisk}>
+            <img src="starYellow.png" alt="" />
+          </span>
+          ut
+        </h2>
+      </div>
+      <div className={styles.skills}>
+        <div className={styles.listSkills}>
+          {
+            icons.map((iconInfo) => (
+              <div className={styles.iconCard}
+                key={iconInfo.id}
+                onMouseEnter={() => setShow(iconInfo.id)}
+                onMouseLeave={()=> setShow('')}
+              >
+                <Icons
+                  iconInfo={iconInfo}
+                  show={show}
+                />
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -105,3 +90,21 @@ const About = () => {
 }
 
 export default About
+
+//slider logic
+
+// const slider = box4.current;
+// const totalScroll = slider.scrollWidth - slider.offsetWidth;
+
+// gsap.to(slider, {
+    //   x: () => -totalScroll,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: box1.current,
+    //     pin: true,
+    //     scrub: 1,
+    //     start: "center center",
+    //     end: () => '+=' + totalScroll,
+    //     refreshPriority: 3,
+    //   },
+    // });

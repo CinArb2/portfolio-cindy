@@ -10,28 +10,26 @@ import CursorContext from '../context/CursorContext';
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const box1 = useRef(null);
-  const box2 = useRef(null);
-  const box3 = useRef(null);
-  const box4 = useRef(null);
-  const tl = useRef();
+  const title = useRef(null);
+  const subHeading = useRef(null);
+  const imgRef = useRef(null);
+  
   const { handleMouseEnter, handleMouseLeaving} = useContext(CursorContext)
 
   useEffect(() => {
-    
-    tl.current = gsap.timeline()
-      .to(box1.current, { opacity: 1, y: 0, zIndex: 1, ease: "power3.out", duration: 0.3, delay: 0.5})
-      .to(box2.current, {opacity: 1,y: 0, zIndex: 1, ease: "power3.out", duration: 0.3})
-      .to(box3.current, { opacity: 1, y: 0, zIndex: 1, ease: "power3.out", duration: 0.3})
-    
-    gsap.to(box4.current, {
-      opacity: 1, y: 0,
-      scrollTrigger:
-      {
-        trigger: box4.current,
-        start: 200,
-      },
-    });
+    let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 1}});
+    tl.to(title.current, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+      opacity: 1,
+    })
+    .to(subHeading.current, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+      opacity: 1,
+    })
+    .to(imgRef.current, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+      opacity: 1,
+    })
     
   }, []);
 
@@ -50,25 +48,22 @@ const Hero = () => {
           className={styles.containerTitle}
           onMouseEnter={handleEnter}
           onMouseLeave={handleMouseLeave}
-        >
-          <h1 className={styles.titleHero}
-            ref={box1}>Creative</h1>
-          <h1 className={styles.titleSpan} ref={box2}>front end</h1>
-          <h1 className={styles.titleHero} ref={box3}>developer</h1>
+          ref={title}>
+          <p className={styles.subtitleHero} ref={subHeading}>Hi, I am Cindy</p>
+          <h1 className={styles.titleHero}>fr<span className={styles.asterisk}>
+            <img src="vector.png" alt="" />
+          </span>nt-end devel<span className={styles.asterisk}>
+            <img src="greenStar.png" alt="" />
+          </span>per
+          </h1>
         </div>
-        <div className={styles.containerImage}>
+        <div className={styles.containerImage} ref={imgRef}>
           <Image
             src={profilePicture}
             alt="picture of author"
             objectFit="cover"
             layout="fill"
             />
-        </div>
-        <div
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <h2 className={styles.subtitleHero} ref={box4}>Based <span className={styles.titleText}>in</span> Medellin</h2>
         </div>
       </div>
     </section>

@@ -23,12 +23,12 @@ const Portfolio = () => {
       duration: 1,
       scrollTrigger: { trigger: box1.current },
     });
-    gsap.to(box3.current, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      scrollTrigger: { trigger: box1.current },
-    });
+    // gsap.to(box3.current, {
+    //   opacity: 1,
+    //   y: 0,
+    //   duration: 1,
+    //   scrollTrigger: { trigger: box1.current },
+    // });
 
      gsap.to(box4.current,
          {
@@ -70,9 +70,9 @@ const Portfolio = () => {
       className={styles.wrapperPortfolio}>
       <div className={styles.containerPortfolio}>
         <h2 className={styles.heading} ref={box2}>02/Porftolio</h2>
-        <p className={styles.textPortfolio} ref={box3}>
+        {/* <p className={styles.textPortfolio} ref={box3}>
           Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
-        </p>
+        </p> */}
         <div className={styles.containerProject} ref={box4}>
           <Project
           picture={blogPicture}

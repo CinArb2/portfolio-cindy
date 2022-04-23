@@ -1,24 +1,24 @@
 
 .iconsSkills{
-  margin-top: 1rem;
+  /* margin-top: 0.4rem; */
   border-radius: 50%;
   display: block;
-  font-size: 7rem;
-  margin-inline: 1rem;
-  color: #696870;
+  font-size: clamp(1rem, 7vw, 7rem);
+  color: #E1BCBC;
   transition: transform 00ms ease-in-out,
    color 400ms ease-in-out
   ;
 }
 
-
-
 .iconsTag{
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 0.8rem;
   opacity: 0;
   transition: opacity 200ms ease-in-out;
-  padding: 0.5rem;
+  display: inline-block;
+  max-width: 100px;
+  line-height: 1;
+  color: #E1BCBC;
 }
 
 .iconsTag.show{
@@ -26,5 +26,5 @@
 }
 
 .iconsSkills.show{
-  color: #ef7a49;
+  color: #66a096;
 }
