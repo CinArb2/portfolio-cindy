@@ -1,16 +1,16 @@
 
 .project{
   max-width: 1500px;
-  height: 55vh;
-  margin: 7rem auto;
+  margin: 10vh;
+  min-height: 55vh;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
   border: var(--border-px) solid var(--heading-color);
   position: relative;
-  background-color: white;
+  background-color: var(--body-color);
+  
 }
-
 
 .project::after{
   content: '';
@@ -19,12 +19,16 @@
   bottom: -40px;
   left: -2px;
   right: -40px;
-  background-color: #e0dede;
   z-index: -1;
+background-color: #e9e0d7;
+opacity: 0.8;
+background-size: 4px 4px;
+background-image: repeating-linear-gradient(45deg, #405a7c 0, #405a7c 0.4px, #e9e0d7 0, #e9e0d7 50%);
 }
 
 .containerImage{
   border-right: var(--border-px) solid var(--heading-color);
+  overflow: hidden;
 }
 
 .containerImage img{

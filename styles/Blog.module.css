@@ -4,7 +4,6 @@
   grid-template-columns: 1fr 1fr;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
-  /* background-color: transparent; */
   background-color: var(--body-color);
   position: relative;
 }
@@ -14,9 +13,7 @@
   width: fit-content;
   opacity: 0;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-  margin-left: auto;
-  margin-top: 2rem;
-  margin-right: 5rem;
+  margin: 2rem 5rem 0 auto;
 }
 
 .asterisk {

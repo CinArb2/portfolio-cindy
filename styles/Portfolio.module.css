@@ -1,28 +1,27 @@
 .wrapperPortfolio{
-  padding-top: 2rem;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
-  /* background-color: transparent; */
-  overflow: hidden;
-  padding-bottom: 20vh;
   background-color: var(--body-color);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
 }
 
-.containerPortfolio{
-  margin-top: 10vh;
-  width: 70%;
-  min-height: 700px;
+.wrapperHeading{
+  border-right: var(--border-px) solid var(--heading-color);
+  
 }
-
 
 .heading{
   font-size: clamp(1rem, 7vw, 7rem);
-  width: fit-content;
+  width: max-content;
   opacity: 0;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  position: sticky;
+  top: 5vh;
+  align-self: flex-start;
+  margin: 2rem 1rem 3rem;
 }
 
 .containerProject{
@@ -42,11 +41,3 @@
   display: inline;
 }
 
-/* @keyframes animate-rotate {
-  to{
-    transform: rotate(0deg);
-  }
-  from{
-    transform: rotate(360deg);
-  }
-} */

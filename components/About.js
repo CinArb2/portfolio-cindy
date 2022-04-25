@@ -72,6 +72,9 @@ const About = () => {
         </h2>
       </div>
       <div className={styles.skills}>
+        <div className={styles.skillsHeading}>
+          <h2>Skills</h2>
+        </div>
         <div className={styles.listSkills}
           ref={listSkillsRef}
         >

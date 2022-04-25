@@ -1,7 +1,5 @@
 import styles from '../styles/Portfolio.module.css'
 import Project from './Project'
-import blogPicture from '../public/blog.png'
-import ecommerce from '../public/ecommerce.png'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, useContext } from "react";
@@ -89,52 +87,54 @@ const Portfolio = () => {
       id='portfolio'
       ref={sectionPortf}
       className={styles.wrapperPortfolio}>
-      <div className={styles.containerPortfolio}>
-        <h2 className={styles.heading}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}
-          ref={headingRef}
-        >P
-          <span className={styles.asterisk} ref={asteriskRef}>
-            <img src="vector2.png" alt="" />
-          </span>
-          rft
-          <span className={styles.asterisk} ref={asteriskRef2}>
-            <img src="greenStar2.png" alt="" />
-          </span>
-          li
-          <span className={styles.asterisk} ref={asteriskRef3}>
-            <img src="starYellow.png" alt="" />
-          </span>
-        </h2>
-        <div className={styles.containerProject} ref={project1}>
-          <Project
-          picture={'blog.png'}
-          tags={['Next.js', 'Wordpress']}
-          title={'The one way journey'}
+        <div className={styles.wrapperHeading}>
+          <h2 className={styles.heading}
+            onMouseEnter={handleEnter}
+            onMouseLeave={handleMouseLeave}
+            ref={headingRef}
+          >P
+            <span className={styles.asterisk} ref={asteriskRef}>
+              <img src="vector2.png" alt="" />
+            </span>
+            rft
+            <span className={styles.asterisk} ref={asteriskRef2}>
+              <img src="greenStar2.png" alt="" />
+            </span>
+            li
+            <span className={styles.asterisk} ref={asteriskRef3}>
+              <img src="starYellow.png" alt="" />
+            </span>
+          </h2>
+        </div>
+        <div className={styles.containerProjects}>
+          <div className={styles.containerProject} ref={project1}>
+            <Project
+            picture={'blog.png'}
+            tags={['Next.js', 'Wordpress']}
+            title={'The one way journey'}
+            >
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
+            </Project>
+          </div>
+          <div className={styles.containerProject} ref={project2}>
+            <Project
+            picture={'ecommerce.png'}
+            tags={['React', 'Api']}
+            title={'Ibuy ecommerce'}
           >
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
           </Project>
+          </div>
+          <div className={styles.containerProject} ref={project3}>
+            <Project
+            picture={'blog.png'}
+            tags={['HTML', 'css']}
+            title={'The one way journey'}
+          >
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
+          </Project>
+          </div>
         </div>
-        <div className={styles.containerProject} ref={project2}>
-          <Project
-          picture={'ecommerce.png'}
-          tags={['React', 'Api']}
-          title={'Ibuy ecommerce'}
-        >
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
-        </Project>
-        </div>
-        <div className={styles.containerProject} ref={project3}>
-          <Project
-          picture={'blog.png'}
-          tags={['HTML', 'css']}
-          title={'The one way journey'}
-        >
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
-        </Project>
-        </div>
-      </div>
     </section>
   )
 }

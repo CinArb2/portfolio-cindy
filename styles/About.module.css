@@ -1,11 +1,11 @@
 .wrapperAbout{
-  min-height: 95vh;
+  min-height: 70vh;
   position:relative;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
   overflow: hidden;
   display: grid;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 2fr 1fr;
   background-color: var(--body-color);
 }
 
@@ -16,13 +16,15 @@
   opacity: 0.8;
   background-color: #e9e0d7;
   opacity: 0.8;
-  background: radial-gradient(circle, transparent 20%, #e9e0d7 20%, #e9e0d7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e9e0d7 20%, #e9e0d7 80%, transparent 80%, transparent) 10px 10px, linear-gradient(#405a7c 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, #405a7c 0.8px, #e9e0d7 0.8px) -0.4px 0;
-  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+  background-image:  linear-gradient(135deg, #405a7c 25%, transparent 25%), linear-gradient(225deg, #405a7c 25%, transparent 25%), linear-gradient(45deg, #405a7c 25%, transparent 25%), linear-gradient(315deg, #405a7c 25%, #e9e0d7 25%);
+  background-position:  4px 0, 4px 0, 0 0, 0 0;
+  background-size: 4px 4px;
+  background-repeat: repeat;
 }
 
 .containerAbout{
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 5fr 1fr;
 }
 
 
@@ -31,7 +33,10 @@
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
   border-left: var(--border-px) solid var(--heading-color);
-  text-align: center;
+  text-align: left;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding-top: 1rem;
 }
 
 .textAbout{
@@ -51,19 +56,21 @@
   border-top: var(--border-px) solid var(--heading-color);
   position: relative;
   overflow: hidden;
-  background-color: var(--heading-color);
-  display: grid;
-  place-items: center;
+  display: flex;
 }
 
-.skills h2{
-  padding-bottom: 2rem;
+.skillsHeading{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  padding: 1rem;
 }
 
 .listSkills{
   position: relative;
   padding-block: 2rem;
   display: flex;
+  background-color: var(--heading-color);
+  width: 100%;
 }
 
 .iconCard{
