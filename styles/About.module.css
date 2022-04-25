@@ -3,40 +3,48 @@
   position:relative;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
-  padding-top: 1rem;
   overflow: hidden;
   display: grid;
+  grid-template-rows: 3fr 1fr;
   background-color: var(--body-color);
 }
 
-.containerAbout{
-  width: 80%;
-  max-width: 1700px;
-  margin: 3rem auto;
-  height: 100%;
-  display: grid;
-  align-items: center;
+.decoration{
+  height: 80px;
+  border-bottom: var(--border-px) solid var(--heading-color);
+  background-color: #e9e0d7;
+  opacity: 0.8;
+  background-color: #e9e0d7;
+  opacity: 0.8;
+  background: radial-gradient(circle, transparent 20%, #e9e0d7 20%, #e9e0d7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e9e0d7 20%, #e9e0d7 80%, transparent 80%, transparent) 10px 10px, linear-gradient(#405a7c 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, #405a7c 0.8px, #e9e0d7 0.8px) -0.4px 0;
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
 }
+
+.containerAbout{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
 
 .heading{
   font-size: clamp(1rem, 7vw, 7rem);
-  text-align: right;
-  padding-inline: 2rem;
-  width: fit-content;
-  margin-left: auto;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
-  margin-bottom: 2rem;
+  border-left: var(--border-px) solid var(--heading-color);
+  text-align: center;
 }
 
 .textAbout{
   max-width: 700px;
-  margin-right: auto;
   font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 2;
   opacity: 0;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
+  margin: auto;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 
 .skills{

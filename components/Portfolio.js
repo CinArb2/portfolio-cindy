@@ -96,11 +96,11 @@ const Portfolio = () => {
           ref={headingRef}
         >P
           <span className={styles.asterisk} ref={asteriskRef}>
-            <img src="vector.png" alt="" />
+            <img src="vector2.png" alt="" />
           </span>
           rft
           <span className={styles.asterisk} ref={asteriskRef2}>
-            <img src="greenStar.png" alt="" />
+            <img src="greenStar2.png" alt="" />
           </span>
           li
           <span className={styles.asterisk} ref={asteriskRef3}>

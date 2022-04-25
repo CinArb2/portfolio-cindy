@@ -61,7 +61,7 @@ const Hero = () => {
             ref={title}>
             fr
             <span className={styles.asterisk} ref={asteriskRef}>
-              <img src="vector.png" alt="" />
+              <img src="vector2.png" alt="" />
             </span>
             nt-end devel
             <span className={styles.asterisk} ref={asteriskRef2}>

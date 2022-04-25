@@ -35,16 +35,18 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <Link href="/" className='boxRef'>
-        <a className={styles.linkNavbar}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <p ref={box1} className={styles.logo}>
-            Cindy A.
-          </p>
-        </a>
-      </Link>
+      <div className={styles.Link}>
+        <Link href="/" >
+          <a className={styles.linkNavbar}
+            onMouseEnter={handleEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <p ref={box1} className={styles.logo}>
+              Cindy A.
+            </p>
+          </a>
+        </Link>
+      </div>
       <div className={styles.listLinks} ref={box2} >
         <Link href="#portfolio">
           <a className={styles.linkNavbar}

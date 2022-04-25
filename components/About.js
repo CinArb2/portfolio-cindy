@@ -52,9 +52,12 @@ const About = () => {
       id='about'
       ref={section}>
       <div className={styles.containerAbout}>
-        <p className={styles.textAbout} ref={text}>
-          Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
-        </p>
+        <div>
+          <div className={styles.decoration}></div>
+          <p className={styles.textAbout} ref={text}>
+            Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
+          </p>
+        </div>
         <h2 className={styles.heading}
           ref={title}
           onMouseEnter={handleEnter}
@@ -63,7 +66,7 @@ const About = () => {
           <span className={styles.asterisk}
             ref={asteriskRef}
           >
-            <img src="greenStar.png" alt="" />
+            <img src="greenStar2.png" alt="" />
           </span>
           ut
         </h2>

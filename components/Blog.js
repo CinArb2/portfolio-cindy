@@ -72,7 +72,7 @@ const Blog = ({ data }) => {
           onMouseLeave={handleMouseLeave}
           ref={headingRef}
           className={styles.heading}>Bl<span className={styles.asterisk} ref={asteriskRef}>
-        <img src="vector.png" alt="" />
+        <img src="vector2.png" alt="" />
         </span>g</h2>
       </div>
       
