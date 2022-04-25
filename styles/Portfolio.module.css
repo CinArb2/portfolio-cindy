@@ -2,7 +2,7 @@
   min-height: 100vh;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
-  background-color: var(--body-color);
+  /* background-color: var(--body-color); */
   display: grid;
   grid-template-columns: 1fr 2fr;
   position: relative;

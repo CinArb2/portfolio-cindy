@@ -3,17 +3,17 @@
   justify-content: space-between;
   border: var(--border-px) solid var(--heading-color);
   margin: 0 auto;
-background-color: #e9e0d7;
-background-color: #e9e0d7;
-opacity: 0.8;
-background-size: 4px 4px;
-background-image: repeating-linear-gradient(45deg, #405a7c 0, #405a7c 0.4px, #e9e0d7 0, #e9e0d7 50%);
+  background-color: #cbc4bd;
+  opacity: 0.8;
+  background-size: 7px 7px;
+  background-image: repeating-linear-gradient(45deg, #405a7c 0, #405a7c 0.7000000000000001px, #cbc4bd 0, #cbc4bd 50%);
 }
 
 .Link{
   border-right: var(--border-px) solid var(--heading-color);
   padding: 1rem;
   background-color: var(--body-color);
+  background-image: var(--bg-img);
 }
 
 .logo{
@@ -23,6 +23,7 @@ background-image: repeating-linear-gradient(45deg, #405a7c 0, #405a7c 0.4px, #e9
   font-size: 1.2rem;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
+  
 }
 
 .listLinks{
@@ -35,6 +36,7 @@ background-image: repeating-linear-gradient(45deg, #405a7c 0, #405a7c 0.4px, #e9
   border-left: var(--border-px) solid var(--heading-color);
   padding: 1rem;
   background-color: var(--body-color);
+  background-image: var(--bg-img);
 }
 
 .asterisk {

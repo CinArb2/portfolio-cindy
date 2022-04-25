@@ -71,7 +71,7 @@ const Hero = () => {
           </h1>
         </div>
         <div className={styles.containerImage} ref={imgRef}>
-          <img src='profilePicture6.jpg' alt="" />
+          <img src='profilePicture8.jpg' alt="" />
         </div>
       </div>
     </section>

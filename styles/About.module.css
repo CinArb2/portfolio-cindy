@@ -6,20 +6,16 @@
   overflow: hidden;
   display: grid;
   grid-template-rows: 2fr 1fr;
-  background-color: var(--body-color);
+  /* background-color: var(--body-color); */
 }
 
 .decoration{
   height: 80px;
   border-bottom: var(--border-px) solid var(--heading-color);
-  background-color: #e9e0d7;
+  background-color: #cbc4bd;
   opacity: 0.8;
-  background-color: #e9e0d7;
-  opacity: 0.8;
-  background-image:  linear-gradient(135deg, #405a7c 25%, transparent 25%), linear-gradient(225deg, #405a7c 25%, transparent 25%), linear-gradient(45deg, #405a7c 25%, transparent 25%), linear-gradient(315deg, #405a7c 25%, #e9e0d7 25%);
-  background-position:  4px 0, 4px 0, 0 0, 0 0;
-  background-size: 4px 4px;
-  background-repeat: repeat;
+  background-image: radial-gradient(#405a7c 0.35000000000000003px, #cbc4bd 0.35000000000000003px);
+  background-size: 7px 7px;
 }
 
 .containerAbout{

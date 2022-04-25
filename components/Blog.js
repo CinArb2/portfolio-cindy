@@ -60,6 +60,7 @@ const Blog = ({ data }) => {
       ref={sectionRef}
     >
       <div className={styles.containerBlog}>
+        <div className={styles.decoration}></div>
         <div className={styles.containerPosts} ref={containerPost}>
           {data.map(post => (
             <IndividualBlog key={post.id} data={post}/>

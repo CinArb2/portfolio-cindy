@@ -187,7 +187,7 @@
 
 .preLoader{
   position: fixed;
-  background-color: #102b9d;
+  background-color: var(--heading-color);
   top: 0;
   left: 0;
   right: 0;
