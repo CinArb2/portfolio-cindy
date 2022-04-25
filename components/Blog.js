@@ -2,55 +2,78 @@ import React from 'react'
 import styles from '../styles/Blog.module.css'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import CursorContext from '../context/CursorContext';
 
 import IndividualBlog from './IndividualBlog'
 
 const Blog = ({ data }) => {
   gsap.registerPlugin(ScrollTrigger);
-  const box1 = useRef(null);
-  const box2 = useRef(null);
-  const box3 = useRef(null);
+  const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
+  const headingRef = useRef(null);
+  const sectionRef = useRef(null);
+  const containerPost = useRef(null);
+  const asteriskRef = useRef(null)
 
   useEffect(() => {
-    gsap.to(box2.current, {
-      opacity: 1,
-      x: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: box1.current,
-        start: "top center",
-      },
+    const elements = gsap.utils.toArray(containerPost.current.children)
+    
+    gsap.to(asteriskRef.current, {
+      ease: "power1.inOut",
+      rotate: 1000,
+      duration: 0.1,
+      scrollTrigger: { scrub: 1 }
     });
-    gsap.to(box3.current, {
+
+    gsap.to(headingRef.current, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
       opacity: 1,
-      y: 0,
-      duration: 1,
       scrollTrigger: {
-        trigger: box1.current,
+        trigger: sectionRef.current,
         start: "top center",
-      },
-    });
+      }
+    })
+    gsap.to(elements, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+      opacity: 1,
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top center",
+      }
+    })
   }, [])
+
+   const handleEnter = () => {
+    handleMouseEnter()
+  }
+
+  const handleMouseLeave = () => {
+    handleMouseLeaving()
+  }
+
 
   return (
     <section
       id='blog'
-      ref={box1}
-      className={styles.wrapperBlog}>
+      className={styles.wrapperBlog}
+      ref={sectionRef}
+    >
       <div className={styles.containerBlog}>
-        <h2 className={styles.heading} ref={box2}>03/Blog</h2>
-        <p className={styles.textBlog} ref={box3}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, ipsa!
-        </p>
-        <div >
-          <h2>Recent posts</h2>
-          <div className={styles.containerPosts}>
-            {data.map(post => (
-              <IndividualBlog key={post.id} data={post}/>
-            ))}
-          </div>
+        <div className={styles.containerPosts} ref={containerPost}>
+          {data.map(post => (
+            <IndividualBlog key={post.id} data={post}/>
+          ))}
         </div>
+      </div>
+      <div className={styles.containerTitle}>
+        <h2
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleMouseLeave}
+          ref={headingRef}
+          className={styles.heading}>Bl<span className={styles.asterisk} ref={asteriskRef}>
+        <img src="vector.png" alt="" />
+        </span>g</h2>
       </div>
       
     </section>

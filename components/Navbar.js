@@ -15,8 +15,14 @@ const Navbar = () => {
       box1.current,
       box2.current,
     ];
-    
-    gsap.to(boxes, { y: 0, opacity: 1, ease: "power3.out",  duration: 1.5, delay: 0.6},);
+
+    gsap.to(boxes, {
+      delay: 1.5,
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+      opacity: 1,
+      y: 0,
+      stagger: 0.3
+    });
   });
 
   const handleEnter = () => {
@@ -34,7 +40,9 @@ const Navbar = () => {
           onMouseEnter={handleEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <p ref={box1} className={styles.logo}>Cindy A.</p>
+          <p ref={box1} className={styles.logo}>
+            Cindy A.
+          </p>
         </a>
       </Link>
       <div className={styles.listLinks} ref={box2} >

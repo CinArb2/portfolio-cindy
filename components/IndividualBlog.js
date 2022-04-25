@@ -1,20 +1,14 @@
 import React from 'react'
 import styles from '../styles/IndividualBlog.module.css'
-import Image from 'next/image'
+import { BsArrowUpRight } from 'react-icons/bs';
 
-const IndividualBlog = ({data}) => {
+const IndividualBlog = ({ data }) => {
+  
   return (
     <div className={styles.individualPost}>
-      <div className={styles.containerImage}>
-        <Image
-          src={data.social_image}
-          alt="project blog"
-          objectFit="cover"
-          layout="intrinsic"
-          height={400}
-          width={750}
-          />
-      </div>
+      <h3 className={styles.title}>{data.title}</h3>
+      <p>{data.description}</p>
+      <button className={styles.buttonCode}>Read more <BsArrowUpRight/></button>
     </div>
   )
 }

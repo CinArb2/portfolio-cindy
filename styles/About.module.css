@@ -1,12 +1,12 @@
 .wrapperAbout{
   min-height: 95vh;
   position:relative;
-  border-bottom: 2px solid var(--heading-color);
-  border-inline: 2px solid var(--heading-color);
+  border-bottom: var(--border-px) solid var(--heading-color);
+  border-inline: var(--border-px) solid var(--heading-color);
   padding-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  overflow: hidden;
+  display: grid;
+  background-color: var(--body-color);
 }
 
 .containerAbout{
@@ -14,15 +14,19 @@
   max-width: 1700px;
   margin: 3rem auto;
   height: 100%;
+  display: grid;
+  align-items: center;
 }
 
 .heading{
   font-size: clamp(1rem, 7vw, 7rem);
   text-align: right;
   padding-inline: 2rem;
-  padding-bottom: 200px;
   width: fit-content;
   margin-left: auto;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  opacity: 0;
+  margin-bottom: 2rem;
 }
 
 .textAbout{
@@ -31,14 +35,17 @@
   font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 2;
   opacity: 0;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  opacity: 0;
 }
 
 .skills{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  border-top: var(--border-px) solid var(--heading-color);
+  position: relative;
   overflow: hidden;
+  background-color: var(--heading-color);
+  display: grid;
+  place-items: center;
 }
 
 .skills h2{
@@ -46,19 +53,13 @@
 }
 
 .listSkills{
-  background-color: #17468E;
-  border-top: 2px solid var(--heading-color);
   position: relative;
+  padding-block: 2rem;
   display: flex;
-  gap: 1rem;
-  justify-content: space-around;
-  line-height: 0.5;
-  padding: 2rem;
 }
 
 .iconCard{
   padding: 1rem;
-  position: relative;
   text-align: center;
   transition: transform 200ms ease-in-out;
 }
@@ -70,6 +71,7 @@
 .asterisk {
   display: inline-block;
   width: 4vw;
+  line-height: 0;
   animation: animate-rotate 10s infinite linear;
 }
 
@@ -77,12 +79,4 @@
   display: inline;
 }
 
-@keyframes animate-rotate {
-  to{
-    transform: rotate(0deg);
-  }
-  from{
-    transform: rotate(360deg);
-  }
-}
 

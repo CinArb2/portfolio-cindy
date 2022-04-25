@@ -1,3 +1,7 @@
+.container{
+  position: relative;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -144,6 +148,11 @@
   top: 0;
 }
 
+.cursor.light{
+  border: 2px solid var(--body-color);
+  background-color: var(--body-color);
+}
+
 .follower{
   position: fixed;
   width: 50px;
@@ -163,10 +172,25 @@
   border: none;
 }
 
+.follower.light{
+  border: 2px solid var(--body-color);
+}
+
 
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
+}
+
+
+.preLoader{
+  position: fixed;
+  background-color: #102b9d;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
 }

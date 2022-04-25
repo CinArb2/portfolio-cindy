@@ -3,10 +3,10 @@
   min-height: 90vh;
   display: grid;
   position: relative;
-  z-index: 10;
+  background-color: white;
+  border-bottom: var(--border-px) solid var(--heading-color);
+  border-inline: var(--border-px) solid var(--heading-color);
   background-color: var(--body-color);
-  border-bottom: 2px solid var(--heading-color);
-  border-inline: 2px solid var(--heading-color);
 }
 
 .containerHero{
@@ -19,30 +19,25 @@
 }
 
 .containerImage{
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  min-height: 50%;
   overflow: hidden;
-  z-index: -1;
+  z-index: 2;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
 }
 
+.containerImage img{
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.8);
+  filter: contrast(116%) saturate(98%) hue-rotate(-2deg);
+}
+
 .containerTitle{
-  position: relative;
   line-height: 1;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-  opacity: 0;
   font-size: clamp(1rem, 5vw, 5rem);
   align-self: flex-end;
   padding-bottom: 2rem;
   padding-left: 2rem;
-}
-
-.titleText{
-  font-family: var(--font-body);
-  font-weight: 400;
 }
 
 .subtitleHero{
@@ -51,23 +46,33 @@
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   font-size: 3rem;
   padding-bottom: 2rem;
+  transform: translateY(60px);
 }
 
+.title{
+  opacity: 0;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transform: translateY(60px);
+}
+
+
 .asterisk {
-  display: inline-block;
+  line-height: 0;
   width: 4vw;
+  display: inline-block;
   animation: animate-rotate 15s infinite linear;
+  filter: contrast(116%) saturate(28%) hue-rotate(-2deg);
 }
 
 .asterisk img{
   display: inline;
 }
 
-@keyframes animate-rotate {
+/* @keyframes animate-rotate {
   to{
     transform: rotate(0deg);
   }
   from{
     transform: rotate(360deg);
   }
-}
+} */

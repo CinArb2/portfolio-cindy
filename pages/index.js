@@ -7,14 +7,37 @@ import Layout from '../components/Layout'
 import Portfolio from '../components/Portfolio'
 import styles from '../styles/Home.module.css'
 import { gsap } from "gsap";
-import CursorContext  from '../context/CursorContext'
+import CursorContext from '../context/CursorContext'
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Home({ devDotToPosts }) {
+  gsap.registerPlugin(ScrollTrigger);
   const cursor = useRef(null)
   const follower = useRef(null)
-  const { grow } = useContext(CursorContext)
-  
+  const preloader = useRef(null)
+  const { grow, light } = useContext(CursorContext)
+
   useEffect(() => {
+    const body = document.body
+    const tl = gsap.timeline({defaults: {ease: "power4.inOut"}})
+    
+
+    tl.to(preloader.current,
+      {
+          y: '-100%',
+          duration: 2,
+      })
+      tl.to(preloader.current,
+      {
+          zIndex: '-10000'
+      })
+    .to(body,
+      {
+        overflowY: 'auto',
+      })
+    
+    
+
     document.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
 
@@ -23,6 +46,7 @@ export default function Home({ devDotToPosts }) {
       
       cursor.current.style.transform = `translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)`
       
+
       gsap.to(follower.current,
         {
           transform: `translate3d(${mouseX - follower.current.clientWidth / 2}px, ${mouseY - follower.current.clientHeight / 2}px, 0)`,
@@ -41,13 +65,21 @@ export default function Home({ devDotToPosts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Hero />
-        <About />
-        <Portfolio />
-        <Blog data={devDotToPosts}/>
+        <main>
+          <Hero />
+          <About />
+          <Portfolio />
+          <Blog data={devDotToPosts}/>
+        </main>
       </Layout>
-      <div className={styles.cursor} ref={cursor}></div>
-      <div className={`${styles.follower} ${grow ? styles.grow : ''}`} ref={follower}></div>
+      <div className={styles.preLoader} ref={preloader}></div>
+      <div className={`${styles.cursor} ${light ? styles.light : ''}`} ref={cursor}></div>
+      <div
+        className={`${styles.follower} 
+        ${grow ? styles.grow : ''}
+        ${light ? styles.light : ''}
+        `} ref={follower}>
+      </div>
     </div>
   )
 }

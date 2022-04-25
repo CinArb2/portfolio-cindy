@@ -1,10 +1,9 @@
 
 .iconsSkills{
-  /* margin-top: 0.4rem; */
   border-radius: 50%;
   display: block;
-  font-size: clamp(1rem, 7vw, 7rem);
-  color: #E1BCBC;
+  font-size: clamp(1rem, 5vw, 5rem);
+  color: #c6bebe;
   transition: transform 00ms ease-in-out,
    color 400ms ease-in-out
   ;
@@ -18,7 +17,7 @@
   display: inline-block;
   max-width: 100px;
   line-height: 1;
-  color: #E1BCBC;
+  color: #e0dede;
 }
 
 .iconsTag.show{

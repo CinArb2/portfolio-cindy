@@ -11,31 +11,30 @@ const About = () => {
   const section = useRef(null);
   const title = useRef(null);
   const text = useRef(null);
+  const listSkillsRef = useRef(null)
+  const asteriskRef = useRef(null)
   const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
   const [show, setShow] = useState('')
-  const [gif, setGif] = useState('')
+  
   
   useEffect(() => {
-    
-    gsap.to(title.current, {
+    let element = [title.current, text.current]
+    gsap.to(element, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
       opacity: 1,
-      x: 0,
-      duration: 1,
+      stagger: 0.3,
       scrollTrigger: {
         trigger: section.current,
         start: "top center",
       },
+    })
+
+    gsap.to(asteriskRef.current, {
+      ease: "power1.inOut",
+      rotate: 1000,
+      duration: 0.2,
+      scrollTrigger: { scrub: 1 }
     });
-    gsap.to(text.current, {
-      opacity: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: section.current,
-        start: "top center",
-      },
-    });
-    
-    
   }, []);
 
   const handleEnter = () => {
@@ -61,14 +60,18 @@ const About = () => {
           onMouseEnter={handleEnter}
           onMouseLeave={handleMouseLeave}
         >Ab
-          <span className={styles.asterisk}>
-            <img src="starYellow.png" alt="" />
+          <span className={styles.asterisk}
+            ref={asteriskRef}
+          >
+            <img src="greenStar.png" alt="" />
           </span>
           ut
         </h2>
       </div>
       <div className={styles.skills}>
-        <div className={styles.listSkills}>
+        <div className={styles.listSkills}
+          ref={listSkillsRef}
+        >
           {
             icons.map((iconInfo) => (
               <div className={styles.iconCard}
@@ -90,21 +93,3 @@ const About = () => {
 }
 
 export default About
-
-//slider logic
-
-// const slider = box4.current;
-// const totalScroll = slider.scrollWidth - slider.offsetWidth;
-
-// gsap.to(slider, {
-    //   x: () => -totalScroll,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: box1.current,
-    //     pin: true,
-    //     scrub: 1,
-    //     start: "center center",
-    //     end: () => '+=' + totalScroll,
-    //     refreshPriority: 3,
-    //   },
-    // });

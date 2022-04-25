@@ -8,12 +8,7 @@ const Project = ({ picture, tags, title, children }) => {
   return (
     <div className={styles.project}>
       <div className={styles.containerImage}>
-        <Image
-          src={picture}
-          alt="project blog"
-          objectFit="contain"
-          layout="responsive"
-          />
+        <img src={picture} alt="project blog" />
       </div>
       <div className={styles.projectBody}>
         <div>
@@ -28,8 +23,8 @@ const Project = ({ picture, tags, title, children }) => {
           {children}
         </div>
         <div className={styles.projectButtons}>
-          <button>View code <BsArrowUpRight/></button>
-          <button>View life site <BsArrowUpRight/></button>
+          <button className={styles.buttonCode}>View code <BsArrowUpRight/></button>
+          <button className={styles.buttonCode}>View  site <BsArrowUpRight/></button>
         </div>
       </div>
     </div>

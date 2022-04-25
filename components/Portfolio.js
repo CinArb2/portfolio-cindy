@@ -4,96 +4,130 @@ import blogPicture from '../public/blog.png'
 import ecommerce from '../public/ecommerce.png'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import CursorContext from '../context/CursorContext';
 
 const Portfolio = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const box1 = useRef(null);
-  const box2 = useRef(null);
-  const box3 = useRef(null);
-  const box4 = useRef(null);
-  const box5 = useRef(null);
-  const box6 = useRef(null);
+  const sectionPortf = useRef(null);
+  const project1 = useRef(null);
+  const project2 = useRef(null);
+  const project3 = useRef(null);
+  const headingRef = useRef(null);
+  const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
+  const asteriskRef = useRef(null)
+  const asteriskRef2 = useRef(null)
+  const asteriskRef3 = useRef(null)
 
   useEffect(() => {
-    
-    gsap.to(box2.current, {
-      opacity: 1,
-      x: 0,
-      duration: 1,
-      scrollTrigger: { trigger: box1.current },
-    });
-    // gsap.to(box3.current, {
-    //   opacity: 1,
-    //   y: 0,
-    //   duration: 1,
-    //   scrollTrigger: { trigger: box1.current },
-    // });
+    const tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 1}})
+    let asterisks = [asteriskRef.current, asteriskRef2.current, asteriskRef3.current]
 
-     gsap.to(box4.current,
-         {
-           opacity: 1,
-           x: 0,
-           duration: 1,
-           scrollTrigger: {
-             trigger: box3.current,
-             start: "top top",
-           }
-         })
-    gsap.to(box5.current,
-         {
-           opacity: 1,
-           x: 0,
-           duration: 1,
-           scrollTrigger: {
-             trigger: box4.current,
-             start: "top top",
-           }
-         })
-    gsap.to(box6.current,
-         {
-           opacity: 1,
-           x: 0,
-           duration: 1,
-           scrollTrigger: {
-             trigger: box5.current,
-             start: "top top",
-           }
-         })
+    gsap.to(asterisks, {
+      ease: "power1.inOut",
+      rotate: 1000,
+      duration: 0.2,
+      scrollTrigger: { scrub: 3 }
+    });
+
+    gsap.to(headingRef.current, {
+      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
+      opacity: 1,
+      scrollTrigger: {
+        trigger: sectionPortf.current,
+        start: "top center",
+      }
+    })
+    tl.to(project1.current, {
+      scrollTrigger: {
+        trigger: sectionPortf.current,
+        start: "top center", 
+        end: "+=200",
+        scrub: 5,
+      },
+      x: 0,
+      scale: 1,
+      opacity: 1,
+    })
+    .to(project2.current, {
+      scrollTrigger: {
+        trigger: project1.current,
+        start: "top center", 
+        end: "+=200", 
+        scrub: 5,
+      },
+      x: 0,
+      scale: 1,
+      opacity: 1,
+    })
+    .to(project3.current, {
+      scrollTrigger: {
+        trigger: project2.current,
+        start: "top center", 
+        end: "+=200", //
+        scrub: 5,
+      },
+      x: 0,
+      scale: 1,
+      opacity: 1,
+    })
+
     
   }, []);
+
+  const handleEnter = () => {
+    handleMouseEnter()
+  }
+
+  const handleMouseLeave = () => {
+    handleMouseLeaving()
+  }
+
 
   return (
     <section
       id='portfolio'
-      ref={box1}
+      ref={sectionPortf}
       className={styles.wrapperPortfolio}>
       <div className={styles.containerPortfolio}>
-        <h2 className={styles.heading} ref={box2}>02/Porftolio</h2>
-        {/* <p className={styles.textPortfolio} ref={box3}>
-          Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
-        </p> */}
-        <div className={styles.containerProject} ref={box4}>
+        <h2 className={styles.heading}
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleMouseLeave}
+          ref={headingRef}
+        >P
+          <span className={styles.asterisk} ref={asteriskRef}>
+            <img src="vector.png" alt="" />
+          </span>
+          rft
+          <span className={styles.asterisk} ref={asteriskRef2}>
+            <img src="greenStar.png" alt="" />
+          </span>
+          li
+          <span className={styles.asterisk} ref={asteriskRef3}>
+            <img src="starYellow.png" alt="" />
+          </span>
+        </h2>
+        <div className={styles.containerProject} ref={project1}>
           <Project
-          picture={blogPicture}
+          picture={'blog.png'}
           tags={['Next.js', 'Wordpress']}
           title={'The one way journey'}
           >
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
           </Project>
         </div>
-        <div className={styles.containerProject} ref={box5}>
+        <div className={styles.containerProject} ref={project2}>
           <Project
-          picture={ecommerce}
+          picture={'ecommerce.png'}
           tags={['React', 'Api']}
           title={'Ibuy ecommerce'}
         >
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
         </Project>
         </div>
-        <div className={styles.containerProject} ref={box6}>
+        <div className={styles.containerProject} ref={project3}>
           <Project
-          picture={blogPicture}
+          picture={'blog.png'}
           tags={['HTML', 'css']}
           title={'The one way journey'}
         >

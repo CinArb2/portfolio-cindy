@@ -4,6 +4,7 @@ const CursorContext = createContext()
 
 const CursorProvider = ({ children }) => {
   const [grow, setGrow] = useState(false)
+  const [light, setLight] = useState(false)
 
   const handleMouseEnter = () => {
     setGrow(true)
@@ -13,10 +14,21 @@ const CursorProvider = ({ children }) => {
     setGrow(false)
   }
 
+  const handleLightCoursor = () => {
+    setLight(true)
+  }
+
+  const handleDarkCoursor = () => {
+     setLight(false)
+  }
+
   const data = {
     grow,
+    light,
     handleMouseEnter,
-    handleMouseLeaving
+    handleMouseLeaving,
+    handleLightCoursor,
+    handleDarkCoursor
   }
 
   return (
