@@ -40,7 +40,7 @@
   height: 100px;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-right: var(--border-px) solid var(--heading-color);
-background-color: #cbc4bd;
-opacity: 0.8;
-background: repeating-linear-gradient( -45deg, #405a7c, #405a7c 2px, #cbc4bd 2px, #cbc4bd 10px );
+  background-color: #cbc4bd;
+  opacity: 0.8;
+  background: repeating-linear-gradient( -45deg, #405a7c, #405a7c 2px, #cbc4bd 2px, #cbc4bd 10px );
 }

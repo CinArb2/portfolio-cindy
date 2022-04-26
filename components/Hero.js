@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import CursorContext from '../context/CursorContext';
+import { BsArrowUpRight } from 'react-icons/bs';
 
 
 const Hero = () => {
@@ -31,7 +32,7 @@ const Hero = () => {
       delay: 1.5,
       clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
       opacity: 1,
-      // stagger: 0.5,
+      stagger: 0.3,
       y: 0
     });
     
@@ -50,15 +51,16 @@ const Hero = () => {
       <div className={styles.containerHero}>
         <div
           className={styles.containerTitle}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}
         >
           
           <p className={styles.subtitleHero} ref={subHeading}>Hi, I am Cindy</p>
 
           <h1
             className={styles.titleHero}
-            ref={title}>
+            ref={title}
+            onMouseEnter={handleEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             fr
             <span className={styles.asterisk} ref={asteriskRef}>
               <img src="vector2.png" alt="" />
@@ -69,6 +71,12 @@ const Hero = () => {
             </span>
             per
           </h1>
+          <button className={styles.buttonHero}>
+            Download Cv <BsArrowUpRight />
+          </button>
+          <button className={styles.buttonHero}>
+            Contact me <BsArrowUpRight />
+          </button>
         </div>
         <div className={styles.containerImage} ref={imgRef}>
           <img src='profilePicture8.jpg' alt="" />

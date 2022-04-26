@@ -5,8 +5,6 @@
   border-inline: var(--border-px) solid var(--heading-color);
   overflow: hidden;
   display: grid;
-  grid-template-rows: 2fr 1fr;
-  /* background-color: var(--body-color); */
 }
 
 .decoration{
@@ -32,20 +30,19 @@
   text-align: left;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  padding-top: 1rem;
+  padding-top: 3rem;
 }
 
 .textAbout{
   max-width: 700px;
+  min-height: 40vh;
   font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 2;
   opacity: 0;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
-  margin: auto;
-  height: 100%;
-  display: grid;
-  place-items: center;
+  margin-left: 3rem;
+  margin-top: 2rem;
 }
 
 .skills{
@@ -65,8 +62,10 @@
   position: relative;
   padding-block: 2rem;
   display: flex;
+  justify-content: space-around;
   background-color: var(--heading-color);
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .iconCard{
