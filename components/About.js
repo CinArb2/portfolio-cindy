@@ -55,7 +55,7 @@ const About = () => {
         <div>
           <div className={styles.decoration}></div>
           <p className={styles.textAbout} ref={text}>
-            Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
+            Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. learning new hacks one day at a time. Web technology enthusiast. Hacking stuffs. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
           </p>
         </div>
         <h2 className={styles.heading}

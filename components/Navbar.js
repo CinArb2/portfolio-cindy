@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.css'
 import { gsap } from "gsap";
-import { useContext, useEffect, useRef } from 'react';
+import {  useContext, useEffect, useRef } from 'react';
 import CursorContext from '../context/CursorContext'
 
 const Navbar = () => {
   const box1 = useRef();
   const box2 = useRef();
   const { handleMouseEnter, handleMouseLeaving} = useContext(CursorContext)
-
+  
   // wait until DOM has been rendered
   useEffect(() => {
     const boxes = [
@@ -25,7 +25,7 @@ const Navbar = () => {
     });
   });
 
-  const handleEnter = () => {
+  const handleEnter =  () => {
     handleMouseEnter()
   }
 
