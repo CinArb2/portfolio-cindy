@@ -3,7 +3,6 @@
   position: relative;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
-  /* background-color: var(--body-color); */
   overflow: hidden;
 }
 
@@ -26,6 +25,8 @@
 
 .containerImage img{
   object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .containerTitle{
@@ -57,7 +58,7 @@
 
 .asterisk {
   line-height: 0;
-  width: 4vw;
+  width: 3vw;
   display: inline-block;
   animation: animate-rotate 15s infinite linear;
 }
@@ -66,36 +67,22 @@
   display: inline;
 }
 
-.buttonHero{
-  font-size: 1rem;
-  margin: 1rem;
-  background-color: transparent;
-  border: 1px solid var(--heading-color);
-  border-radius: 50%;
-  padding: 1rem;
-  cursor: pointer;
-  color: inherit;
-  position: relative;
-  overflow: hidden;
-}
 
-.buttonHero::before{
-  transition: all 400ms ease-in-out;
-  opacity: 0;
-}
 
-.buttonHero:hover::before{
-  content: '--->';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: white;
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
-  background-color: var(--body-color);
-  background-image: var(--bg-img);
-  opacity: 1;
+
+@media screen and  (max-width: 800px){
+  .containerHero{
+    height: 85vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 2rem;
+  }
+  .containerImage{
+    order: -1;
+    height: 50vh;
+    border-bottom: var(--border-px) solid var(--heading-color);
+    border-left: none;
+  }
 }

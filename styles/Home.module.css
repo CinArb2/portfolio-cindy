@@ -164,6 +164,7 @@
   z-index: 100;
   top: 0;
   pointer-events: none;
+  transition: width 200ms ease-in-out;
 }
 
 .follower.grow{

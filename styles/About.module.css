@@ -31,18 +31,18 @@
   writing-mode: vertical-rl;
   text-orientation: mixed;
   padding-top: 3rem;
+  
 }
 
 .textAbout{
-  max-width: 700px;
+  max-width: 1000px;
   min-height: 40vh;
   font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 2;
   opacity: 0;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
-  margin-left: 3rem;
-  margin-top: 2rem;
+  padding: 2rem;
 }
 
 .skills{
@@ -56,16 +56,16 @@
   writing-mode: vertical-rl;
   text-orientation: upright;
   padding: 1rem;
+  text-align: center;
 }
 
 .listSkills{
   position: relative;
   padding-block: 2rem;
-  display: flex;
-  justify-content: space-around;
   background-color: var(--heading-color);
   width: 100%;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .iconCard{
@@ -89,4 +89,15 @@
   display: inline;
 }
 
+@media screen and (max-width: 1350px){
+  .listSkills{
+    grid-template-columns: repeat(6, 1fr);
+  }
 
+}
+
+@media screen and (max-width: 650px){
+  .listSkills{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

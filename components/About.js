@@ -13,7 +13,11 @@ const About = () => {
   const text = useRef(null);
   const listSkillsRef = useRef(null)
   const asteriskRef = useRef(null)
-  const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
+  const { handleMouseEnter,
+    handleMouseLeaving,
+    handleLightCoursor,
+    handleDarkCoursor
+  } = useContext(CursorContext)
   const [show, setShow] = useState('')
   
   
@@ -66,7 +70,7 @@ const About = () => {
           <span className={styles.asterisk}
             ref={asteriskRef}
           >
-            <img src="greenStar2.png" alt="" />
+            <img src="greenStar3.png" alt="" />
           </span>
           ut
         </h2>
@@ -77,6 +81,8 @@ const About = () => {
         </div>
         <div className={styles.listSkills}
           ref={listSkillsRef}
+          onMouseEnter={() => handleLightCoursor()}
+          onMouseLeave={() => handleDarkCoursor()}
         >
           {
             icons.map((iconInfo) => (

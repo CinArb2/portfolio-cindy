@@ -4,7 +4,6 @@
   grid-template-columns: 1fr 1fr;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
-  /* background-color: var(--body-color); */
   position: relative;
 }
 
@@ -19,7 +18,7 @@
 .asterisk {
   line-height: 0;
   display: inline-block;
-  width: 4vw;
+  width: 3vw;
   animation: animate-rotate 15s infinite linear;
 }
 
@@ -43,4 +42,14 @@
   background-color: #cbc4bd;
   opacity: 0.8;
   background: repeating-linear-gradient( -45deg, #405a7c, #405a7c 2px, #cbc4bd 2px, #cbc4bd 10px );
+}
+
+@media screen and (max-width: 1200px){
+  .wrapperBlog{
+    grid-template-columns: 2fr 1fr;
+  }
+  .heading{
+    margin: 2rem;
+    margin-left: auto;
+  }
 }

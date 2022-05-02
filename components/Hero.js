@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import CursorContext from '../context/CursorContext';
 import { BsArrowUpRight } from 'react-icons/bs';
-
+import Button from './Button';
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -63,20 +63,16 @@ const Hero = () => {
           >
             fr
             <span className={styles.asterisk} ref={asteriskRef}>
-              <img src="vector2.png" alt="" />
+              <img src="vector4.png" alt="" />
             </span>
             nt-end devel
             <span className={styles.asterisk} ref={asteriskRef2}>
-                <img src="starYellow.png" alt="" />
+                <img src="starYellow1.png" alt="" />
             </span>
             per
           </h1>
-          <button className={styles.buttonHero}>
-            Download Cv <BsArrowUpRight />
-          </button>
-          <button className={styles.buttonHero}>
-            Contact me <BsArrowUpRight />
-          </button>
+          <Button>Download cv</Button>
+          <Button>Contact me</Button>
         </div>
         <div className={styles.containerImage} ref={imgRef}>
           <img src='profilePicture8.jpg' alt="" />

@@ -1,0 +1,45 @@
+
+.buttonHero{
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  margin: 2rem 1rem 2rem 0;
+  background-color: transparent;
+  border: 1px solid var(--heading-color);
+  border-radius: 50%;
+  cursor: pointer;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  height: 60px;
+}
+
+.arrowRight{
+  position: absolute;
+  transform: translate3d(0vw, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  left: -90px;
+  top: 40%;
+  transition: transform 400ms ease-in-out;
+}
+
+.arrowRight img{
+  width: 70%
+}
+
+.infoButton{
+  display: block;
+  transform: translate3d(0vw, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transition: transform 400ms ease-in-out;
+}
+
+.buttonHero:hover .arrowRight{
+
+  transform: translate3d(140px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+
+.buttonHero:hover .infoButton{
+  transform: translate3d(140px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+
+

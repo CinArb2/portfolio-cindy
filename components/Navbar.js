@@ -42,7 +42,7 @@ const Navbar = () => {
             onMouseLeave={handleMouseLeave}
           >
             <p ref={box1} className={styles.logo}>
-              Cindy A.
+              CinArb/
             </p>
           </a>
         </Link>

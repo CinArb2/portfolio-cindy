@@ -2,7 +2,7 @@
   background-color: var(--heading-color);
   color: var(--body-color);
   height: 100vh;
-  padding-right: 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -19,7 +19,7 @@
 .textContactme{
   text-align: center;
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: clamp(1rem, 7vw, 4rem);
 }
 
 .listSocial{

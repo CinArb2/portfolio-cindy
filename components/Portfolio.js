@@ -4,13 +4,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, useContext } from "react";
 import CursorContext from '../context/CursorContext';
+import projects from '../helpers/projects'
 
 const Portfolio = () => {
   gsap.registerPlugin(ScrollTrigger);
   const sectionPortf = useRef(null);
-  const project1 = useRef(null);
-  const project2 = useRef(null);
-  const project3 = useRef(null);
   const headingRef = useRef(null);
   const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
   const asteriskRef = useRef(null)
@@ -36,40 +34,6 @@ const Portfolio = () => {
         start: "top center",
       }
     })
-    tl.to(project1.current, {
-      scrollTrigger: {
-        trigger: sectionPortf.current,
-        start: "top center", 
-        end: "+=200",
-        scrub: 5,
-      },
-      x: 0,
-      scale: 1,
-      opacity: 1,
-    })
-    .to(project2.current, {
-      scrollTrigger: {
-        trigger: project1.current,
-        start: "top center", 
-        end: "+=200", 
-        scrub: 5,
-      },
-      x: 0,
-      scale: 1,
-      opacity: 1,
-    })
-    .to(project3.current, {
-      scrollTrigger: {
-        trigger: project2.current,
-        start: "top center", 
-        end: "+=200", //
-        scrub: 5,
-      },
-      x: 0,
-      scale: 1,
-      opacity: 1,
-    })
-
     
   }, []);
 
@@ -94,46 +58,24 @@ const Portfolio = () => {
             ref={headingRef}
           >P
             <span className={styles.asterisk} ref={asteriskRef}>
-              <img src="vector2.png" alt="" />
+              <img src="vector4.png" alt="" />
             </span>
             rft
             <span className={styles.asterisk} ref={asteriskRef2}>
-              <img src="greenStar2.png" alt="" />
+              <img src="greenStar3.png" alt="" />
             </span>
             li
             <span className={styles.asterisk} ref={asteriskRef3}>
-              <img src="starYellow.png" alt="" />
+              <img src="starYellow1.png" alt="" />
             </span>
           </h2>
         </div>
-        <div className={styles.containerProjects}>
-          <div className={styles.containerProject} ref={project1}>
-            <Project
-            picture={'blog.png'}
-            tags={['Next.js', 'Wordpress']}
-            title={'The one way journey'}
-            >
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
-            </Project>
-          </div>
-          <div className={styles.containerProject} ref={project2}>
-            <Project
-            picture={'ecommerce.png'}
-            tags={['React', 'Api']}
-            title={'Ibuy ecommerce'}
-          >
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
-          </Project>
-          </div>
-          <div className={styles.containerProject} ref={project3}>
-            <Project
-            picture={'blog.png'}
-            tags={['HTML', 'css']}
-            title={'The one way journey'}
-          >
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.</p>
-          </Project>
-          </div>
+      <div className={styles.containerProjects}>
+        {
+          projects.map(project => (
+            <Project key={project.id} data={project}/>
+          ))
+        }
         </div>
     </section>
   )
