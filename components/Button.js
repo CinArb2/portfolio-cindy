@@ -6,7 +6,7 @@ const Button = ({children}) => {
   return (
    <button className={styles.buttonHero}>
       <span className={styles.arrowRight}>
-        <img src="arrowButton.png" alt="" />
+        <img src="arrowButton2.png" alt="" />
       </span>
       <span className={styles.infoButton}>
         {children} <BsArrowUpRight />

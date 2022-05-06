@@ -10,10 +10,10 @@
 .decoration{
   height: 80px;
   border-bottom: var(--border-px) solid var(--heading-color);
-  background-color: #cbc4bd;
-  opacity: 0.8;
-  background-image: radial-gradient(#405a7c 0.35000000000000003px, #cbc4bd 0.35000000000000003px);
-  background-size: 7px 7px;
+background-color: transparent;
+opacity: 0.8;
+background-size: 6px 6px;
+background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.6000000000000001px, transparent 0, transparent 50%);
 }
 
 .containerAbout{
@@ -23,7 +23,7 @@
 
 
 .heading{
-  font-size: clamp(1rem, 7vw, 7rem);
+  font-size: clamp(3rem, 7vw, 7rem);
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
   border-left: var(--border-px) solid var(--heading-color);
@@ -36,13 +36,16 @@
 
 .textAbout{
   max-width: 1000px;
-  min-height: 40vh;
-  font-size: clamp(1rem, 3vw, 1.5rem);
+  min-height: 50vh;
+  font-size: 1.3rem;
   line-height: 2;
   opacity: 0;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
-  padding: 2rem;
+  padding-left: 3rem;
+  max-width: 80%;
+  display: grid;
+  place-items: center;
 }
 
 .skills{
@@ -50,6 +53,7 @@
   position: relative;
   overflow: hidden;
   display: flex;
+  line-height: 1;
 }
 
 .skillsHeading{
@@ -99,5 +103,8 @@
 @media screen and (max-width: 650px){
   .listSkills{
     grid-template-columns: repeat(3, 1fr);
+  }
+  .textAbout{
+    padding-block: 2rem;
   }
 }

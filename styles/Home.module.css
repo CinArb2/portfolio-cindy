@@ -1,7 +1,8 @@
 .container{
   position: relative;
   opacity: 1;
-  /* transform: translateY(100vh); */
+  position: relative;
+  z-index: 1;
 }
 
 .main {
@@ -146,7 +147,7 @@
   width: 10px;
   height: 10px;
   background-color: var(--heading-color);
-  z-index: 99;
+  z-index: 100;
   top: 0;
 }
 
@@ -204,4 +205,29 @@
   font-size: 10vw;
   color: var(--body-color);
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.bgColor{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: multiply;
+  background-color:hsla(61,0%,100%,1);
+  background-image:
+  radial-gradient(at 100% 0%, hsla(23,58%,72%,0.49) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(276,45%,29%,0.36) 0px, transparent 50%);
+  z-index: -1;
+}
+
+.bgImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--bg-img);
+  opacity: 0.5;
+  z-index: -2;
 }

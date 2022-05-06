@@ -4,7 +4,7 @@ const projects = [
     img: 'blog.png',
     tags: ['Next.js', 'Wordpress'],
     title: 'The one way journey',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptates placeat neque amet, dolor voluptatum excepturi debitis deleniti hic ipsum.',
+    description: 'I took their existing wordpress site and turned it into a headless CMS with Next.js on the frontend.',
   },
   {
     id: 2,

@@ -1,29 +1,16 @@
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.css'
 import { gsap } from "gsap";
-import {  useContext, useEffect, useRef } from 'react';
+import {  useContext, useEffect, useRef, useState } from 'react';
 import CursorContext from '../context/CursorContext'
 
 const Navbar = () => {
-  const box1 = useRef();
-  const box2 = useRef();
   const { handleMouseEnter, handleMouseLeaving} = useContext(CursorContext)
+  const [open, setOpen] = useState(false)
   
-  // wait until DOM has been rendered
-  useEffect(() => {
-    const boxes = [
-      box1.current,
-      box2.current,
-    ];
-
-    gsap.to(boxes, {
-      delay: 1.5,
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
-      opacity: 1,
-      y: 0,
-      stagger: 0.3
-    });
-  });
+  const handleClick = () => {
+    setOpen(false)
+  }
 
   const handleEnter =  () => {
     handleMouseEnter()
@@ -33,49 +20,59 @@ const Navbar = () => {
     handleMouseLeaving()
   }
 
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.Link}>
         <Link href="/" >
-          <a className={styles.linkNavbar}
+          <a className={styles.logo}
             onMouseEnter={handleEnter}
             onMouseLeave={handleMouseLeave}
-          >
-            <p ref={box1} className={styles.logo}>
-              CinArb/
-            </p>
+          >CinArb/
           </a>
         </Link>
       </div>
-      <div className={styles.listLinks} ref={box2} >
-        <Link href="#portfolio">
-          <a className={styles.linkNavbar}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}>
-            <p>Portfolio</p>
-          </a>
-        </Link>
-        <Link href="#about">
-          <a className={styles.linkNavbar}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}>
-            <p>About me</p>
-          </a>
-        </Link>
-        <Link href="#blog">
-          <a className={styles.linkNavbar}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}>
-            <p>Blog</p>
-          </a>
-        </Link>
-        <Link href="#contact">
-          <a className={styles.linkNavbar}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}>
-            <p>Contact me</p>
-          </a>
-        </Link>
+      <div className={styles.decoration}></div>
+      <div className={`${styles.menuHamb} ${open ? styles.active : ''}`} onClick={()=>setOpen(prev=> !prev)}>
+        <span className={open ? styles.active : ''}></span>
+        <span className={open ? styles.active : ''}></span>
+        <span className={open ? styles.active : ''}></span>
+      </div>
+      <div  className={`${styles.listLinks} ${open ? styles.active : ''}`}>
+        <div className={styles.listNav}>
+          <Link href="#portfolio">
+            <a className={styles.linkNavbar}
+              onMouseEnter={handleEnter}
+              onClick={handleClick}
+            onMouseLeave={handleMouseLeave}>
+              <p>Portfolio</p>
+            </a>
+          </Link>
+          <Link href="#about">
+            <a className={styles.linkNavbar}
+              onMouseEnter={handleEnter}
+              onClick={handleClick}
+            onMouseLeave={handleMouseLeave}>
+              <p>About me</p>
+            </a>
+          </Link>
+          <Link href="#blog">
+            <a className={styles.linkNavbar}
+              onMouseEnter={handleEnter}
+              onClick={handleClick}
+            onMouseLeave={handleMouseLeave}>
+              <p>Blog</p>
+            </a>
+          </Link>
+          <Link href="#contact">
+            <a className={styles.linkNavbar}
+            onMouseEnter={handleEnter}
+            onClick={handleClick}
+            onMouseLeave={handleMouseLeave}>
+              <p>Contact me</p>
+            </a>
+          </Link>
+        </div>
       </div>
     </nav>
   )

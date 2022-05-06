@@ -2,15 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600&display=swap');
 
 :root{
-  --heading-color: #405a7c;
-  --body-color: #e9e0d7;
+  --heading-color: #232020;
+  --body-color: white;
   --light-gray: #938f90;
   /* --font-body: 'Work Sans', sans-serif; */
   --font-body: 'Open Sans', sans-serif;
   /* --font-heading: 'Space Grotesk', sans-serif; */
   --font-heading: 'Playfair Display', serif;
   --border-px: 1px;
-  --bg-img: url(data:image/png;base64,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);
+  --bg-img: url("data:image/svg+xml;utf8,%3Csvg width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 1200 1200%22 version=%221.1%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 %3E %3Cstyle%3E .box_shadow { box-shadow: -5px -5px 20px -10px %23fff; } .shadow_right { -webkit-filter: drop-shadow(-5px -5px 15px %23fff); filter: drop-shadow(-5px -5px 15px %23fff); } .shadow_left{ -webkit-filter: drop-shadow(5px 5px 15px %23fff); filter: drop-shadow(5px 5px 15px %23fff); } %3C%2Fstyle%3E %3Cdefs%3E %3ClinearGradient id=%22gradient__0%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E %3Cstop stop-color=%22%23fff%22 offset=%220.0%25%22 %2F%3E %3Cstop stop-color=%22white%22 offset=%2250.0%25%22 %2F%3E %3Cstop stop-color=%22%23fff%22 offset=%22100.0%25%22 %2F%3E %3C%2FlinearGradient%3E %3Cfilter id=%22grain%22 x=%22-600%22 y=%22-600%22 width=%222400%22 height=%222400%22 filterUnits=%22userSpaceOnUse%22%3E%3E %3CfeFlood flood-color=%22%23ffffff%22 result=%22neutral-gray%22 %2F%3E %3CfeTurbulence in=%22neutral-gray%22 type=%22fractalNoise%22 baseFrequency=%222.5%22 numOctaves=%22100%22 stitchTiles=%22stitch%22 result=%22noise%22 %2F%3E %3CfeColorMatrix in=%22noise%22 type=%22saturate%22 values=%220%22 result=%22destaturatedNoise%22 %3E%3C%2FfeColorMatrix%3E %3CfeComponentTransfer in=%22desaturatedNoise%22 result=%22theNoise%22%3E %3CfeFuncA type=%22table%22 tableValues=%220 0 0.48 0%22%3E%3C%2FfeFuncA%3E %3C%2FfeComponentTransfer%3E %3CfeBlend in=%22SourceGraphic%22 in2=%22theNoise%22 mode=%22soft-light%22 result=%22noisy-image%22 %2F%3E %3C%2Ffilter%3E} %3C%2Fdefs%3E %3Cg filter=%22url(%23grain)%22%3E %3Crect width=%221200%22 height=%221200%22 fill=%22%23fff%22%2F%3E %3Crect class=%22%22 id=%22rect__1%22 x=%22400%22 y=%22200%22 width=%22400%22 height=%22800%22 fill=%22url(%23gradient__0)%22 %2F%3E %3Crect class=%22shadow_left%22 id=%22rect__2%22 x=%22800%22 y=%220%22 width=%22400%22 height=%221200%22 fill=%22url(%23gradient__0)%22 %2F%3E %3Crect class=%22shadow_right%22 id=%22rect__0%22 x=%220%22 y=%220%22 width=%22400%22 height=%221200%22 fill=%22url(%23gradient__0)%22 %2F%3E %3C%2Fg%3E %3C%2Fsvg%3E");
+      
+      
 }
 
 /* Box sizing rules */
@@ -62,10 +64,9 @@ body {
   overflow-x: hidden;
   cursor: none;
   position: relative;
-  margin: 1rem;
+  padding: 1rem;
   overflow-y: hidden;
   color: var(--heading-color);
-  background-image: var(--bg-img);
 }
 
 h1, h2, h3{

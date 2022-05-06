@@ -12,7 +12,6 @@ const About = () => {
   const title = useRef(null);
   const text = useRef(null);
   const listSkillsRef = useRef(null)
-  const asteriskRef = useRef(null)
   const { handleMouseEnter,
     handleMouseLeaving,
     handleLightCoursor,
@@ -32,13 +31,6 @@ const About = () => {
         start: "top center",
       },
     })
-
-    gsap.to(asteriskRef.current, {
-      ease: "power1.inOut",
-      rotate: 1000,
-      duration: 0.2,
-      scrollTrigger: { scrub: 1 }
-    });
   }, []);
 
   const handleEnter = () => {
@@ -59,20 +51,22 @@ const About = () => {
         <div>
           <div className={styles.decoration}></div>
           <p className={styles.textAbout} ref={text}>
-            Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW. learning new hacks one day at a time. Web technology enthusiast. Hacking stuffs. Quae, expedita? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, et.
+            Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW.
+            <br/>
+            I'm a self-motivated learner with strong organisation, time management and communication skills.
+            I love exploring, creating and I consider myself a lifelong learner.
+            <br/>
+            Although I graduated as an industrial engineer from university, I was always curious about the world of web development, and that is how about 1 year ago I have embarked on this path of learning it.
+            <br />
+            Below you will find a list of technologies I have worked with.
           </p>
         </div>
         <h2 className={styles.heading}
           ref={title}
           onMouseEnter={handleEnter}
           onMouseLeave={handleMouseLeave}
-        >Ab
-          <span className={styles.asterisk}
-            ref={asteriskRef}
-          >
-            <img src="greenStar3.png" alt="" />
-          </span>
-          ut
+        >
+          About
         </h2>
       </div>
       <div className={styles.skills}>

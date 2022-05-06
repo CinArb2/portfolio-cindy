@@ -34,7 +34,6 @@
 }
 
 .buttonHero:hover .arrowRight{
-
   transform: translate3d(140px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 }
 
@@ -42,4 +41,20 @@
   transform: translate3d(140px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 }
 
+@media screen and (max-width: 464px){
+  .buttonHero{
+    width: 120px;
+    height: 60px;
+    margin: 0;
+    margin-top: 1rem;
+  }
 
+  .buttonHero:hover .arrowRight{
+  transform: translate3d(120px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+
+  .buttonHero:hover .infoButton{
+    transform: translate3d(120px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+
+}

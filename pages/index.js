@@ -47,7 +47,7 @@ export default function Home({ devDotToPosts }) {
       const mouseX = clientX;
       const mouseY = clientY;
       
-      cursor.current.style.transform = `translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)`
+      cursor.current?.style.transform = `translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)`
       
 
       gsap.to(follower.current,
@@ -61,6 +61,7 @@ export default function Home({ devDotToPosts }) {
 
 
   return (
+    <>
     <div className={styles.container} ref={content}>
       <Head>
         <title>Cindy Arbelaez Front End Developer</title>
@@ -78,6 +79,7 @@ export default function Home({ devDotToPosts }) {
       <div className={styles.preLoader} ref={preloader}>
         <h2 className={styles.preLoaderText}>CinArb/</h2>
       </div>
+    </div>
       <div className={`${styles.cursor} ${light ? styles.light : ''}`} ref={cursor}></div>
       <div
         className={`${styles.follower} 
@@ -85,7 +87,9 @@ export default function Home({ devDotToPosts }) {
         ${light ? styles.light : ''}
         `} ref={follower}>
       </div>
-    </div>
+      <div className={styles.bgColor}></div>
+      <div className={styles.bgImage}></div>
+    </>
   )
 }
 

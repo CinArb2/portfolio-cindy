@@ -7,27 +7,31 @@
 }
 
 .containerHero{
-  height: 85vh;
+  min-height: 85vh;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: left;
   gap: 2rem;
+  width: 90%;
 }
 
 .containerImage{
-  overflow: hidden;
   z-index: 2;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
-  border-left: var(--border-px) solid var(--heading-color);
+  align-self: center;
 }
 
 .containerImage img{
   object-fit: cover;
-  height: 100%;
-  width: 100%;
+  width: 90%;
+  border-radius: 40%;
+  max-width: 500px;
+  margin: 0 auto;
+  border: var(--border-px) solid var(--heading-color);
 }
+
 
 .containerTitle{
   line-height: 1.2;
@@ -35,14 +39,14 @@
   align-self: flex-end;
   padding-bottom: 2rem;
   padding-left: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10vh;
 }
 
 .subtitleHero{
   position: relative;
   opacity: 0;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
   padding-left: 0.5rem;
   transform: translateY(60px);
 }
@@ -53,36 +57,42 @@
   transform: translateY(60px);
   max-width: 700px;
   width: fit-content;
+  font-size: clamp(2rem, 6vw, 6rem);
 }
 
-
-.asterisk {
-  line-height: 0;
-  width: 3vw;
-  display: inline-block;
-  animation: animate-rotate 15s infinite linear;
-}
-
-.asterisk img{
-  display: inline;
-}
-
-
-
-
-@media screen and  (max-width: 800px){
+@media screen and  (max-width: 880px){
   .containerHero{
-    height: 85vh;
+    padding-top: 2rem;
+    min-height: 85vh;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    text-align: left;
+    text-align: center;
     gap: 2rem;
   }
   .containerImage{
     order: -1;
-    height: 50vh;
-    border-bottom: var(--border-px) solid var(--heading-color);
     border-left: none;
+  }
+
+  .containerTitle{
+    padding-bottom: 0;
+    padding-left: 0;
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+
+  .titleHero{
+    opacity: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    transform: translateY(60px);
+    max-width: 700px;
+    width: auto;
+    font-size: clamp(2rem, 6vw, 6rem);
+    padding-top: 1rem;
+  }
+
+  .containerTitle button{
+    transform: scale(0.9)
   }
 }

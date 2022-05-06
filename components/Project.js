@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from '../styles/Project.module.css'
-import Image from 'next/image'
-import { BsArrowUpRight } from 'react-icons/bs';
 import Button from './Button';
 
 const Project = ({ data}) => {

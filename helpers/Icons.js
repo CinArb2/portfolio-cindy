@@ -57,6 +57,7 @@ const icons = [
     name: 'Redux',
     icon: <SiRedux/>,
   },
+  
   {
     id: 11,
     name: 'Responsive design',

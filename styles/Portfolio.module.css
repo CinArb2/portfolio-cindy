@@ -9,11 +9,11 @@
 }
 
 .heading{
-  font-size: clamp(1rem, 7vw, 7rem);
+  font-size: clamp(3rem, 7vw, 7rem);
   width: max-content;
   opacity: 0;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .containerProjects{
@@ -34,17 +34,22 @@
   display: inline;
 }
 
-@media screen and (max-width: 1230px){
+@media screen and (max-width: 1483px){
   .containerProjects{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
   .containerProjects{
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: none;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .containerProjects{
+    padding: 0;
   }
 }

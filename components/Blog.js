@@ -18,12 +18,6 @@ const Blog = ({ data }) => {
   useEffect(() => {
     const elements = gsap.utils.toArray(containerPost.current.children)
     
-    gsap.to(asteriskRef.current, {
-      ease: "power1.inOut",
-      rotate: 1000,
-      duration: 0.1,
-      scrollTrigger: { scrub: 1 }
-    });
 
     gsap.to(headingRef.current, {
       clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
@@ -72,9 +66,7 @@ const Blog = ({ data }) => {
           onMouseEnter={handleEnter}
           onMouseLeave={handleMouseLeave}
           ref={headingRef}
-          className={styles.heading}>Bl<span className={styles.asterisk} ref={asteriskRef}>
-        <img src="vector4.png" alt="" />
-        </span>g</h2>
+          className={styles.heading}>Blog</h2>
       </div>
       
     </section>

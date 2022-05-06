@@ -17,14 +17,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 1}})
-    let asterisks = [asteriskRef.current, asteriskRef2.current, asteriskRef3.current]
-
-    gsap.to(asterisks, {
-      ease: "power1.inOut",
-      rotate: 1000,
-      duration: 0.2,
-      scrollTrigger: { scrub: 3 }
-    });
+    
 
     gsap.to(headingRef.current, {
       clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
@@ -56,18 +49,8 @@ const Portfolio = () => {
             onMouseEnter={handleEnter}
             onMouseLeave={handleMouseLeave}
             ref={headingRef}
-          >P
-            <span className={styles.asterisk} ref={asteriskRef}>
-              <img src="vector4.png" alt="" />
-            </span>
-            rft
-            <span className={styles.asterisk} ref={asteriskRef2}>
-              <img src="greenStar3.png" alt="" />
-            </span>
-            li
-            <span className={styles.asterisk} ref={asteriskRef3}>
-              <img src="starYellow1.png" alt="" />
-            </span>
+          >
+            Portfolio
           </h2>
         </div>
       <div className={styles.containerProjects}>
