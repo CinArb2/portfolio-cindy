@@ -9,8 +9,8 @@ import styles from '../../styles/PostDetail.module.css'
 
 const PostDetail = ({ post }) => {
   gsap.registerPlugin(ScrollTrigger);
-  const cursor = useRef(null)
-  const follower = useRef(null)
+  const cursor = useRef()
+  const follower = useRef()
   const { grow, light } = useContext(CursorContext)
   const { handleLightCoursor, handleDarkCoursor, handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
   

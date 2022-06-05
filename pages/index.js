@@ -12,8 +12,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Home({ devDotToPosts }) {
   gsap.registerPlugin(ScrollTrigger);
-  const cursor = useRef(null)
-  const follower = useRef(null)
+  const cursor = useRef()
+  const follower = useRef()
   const content = useRef(null)
   const { grow, light } = useContext(CursorContext)
 
