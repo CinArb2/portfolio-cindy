@@ -32,12 +32,12 @@ const Project = ({ data, handleClick, show}) => {
             <p>{data.description}</p>
           </div>
           <div className={styles.projectButtons}>
-            <a href={data.gitUrl} target="_blank">
+            <a href={data.gitUrl} rel="noopener">
               <Button >
                 View code
               </Button>
             </a>
-            <a href={data.urlLive} target="_blank">
+            <a href={data.urlLive} rel="noopener">
               <Button >
                   View site
               </Button>

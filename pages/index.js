@@ -27,12 +27,11 @@ export default function Home({ devDotToPosts }) {
       cursor.current?.style.transform = `translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)`
 
       
-        gsap.to(follower.current,
-          {
-            transform: `translate3d(${mouseX - follower.current.clientWidth / 2}px, ${mouseY - follower.current.clientHeight / 2}px, 0)`,
-            ease: "none",
-        //     stagger: 0.1,
-       })
+      gsap.to(follower.current,
+        {
+          transform: `translate3d(${mouseX - follower.current.clientWidth / 2}px, ${mouseY - follower.current.clientHeight / 2}px, 0)`,
+          ease: "none"
+        })
   }
 
   useEffect(() => {
