@@ -2,7 +2,7 @@ import styles from '../styles/Portfolio.module.css'
 import Project from './Project'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext, useState } from "react";
 import CursorContext from '../context/CursorContext';
 import projects from '../helpers/projects'
 
@@ -11,14 +11,13 @@ const Portfolio = () => {
   const sectionPortf = useRef(null);
   const headingRef = useRef(null);
   const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
-  const asteriskRef = useRef(null)
-  const asteriskRef2 = useRef(null)
-  const asteriskRef3 = useRef(null)
+  const [show, setShow] = useState(1)
+
+  const handleClick = (id) => {
+    setShow(id)
+  }
 
   useEffect(() => {
-    const tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: 1}})
-    
-
     gsap.to(headingRef.current, {
       clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
       opacity: 1,
@@ -50,16 +49,21 @@ const Portfolio = () => {
             onMouseLeave={handleMouseLeave}
             ref={headingRef}
           >
-            Portfolio
+            Projects
           </h2>
         </div>
       <div className={styles.containerProjects}>
         {
           projects.map(project => (
-            <Project key={project.id} data={project}/>
+            <Project 
+              key={project.id}
+              data={project}
+              handleClick={handleClick}
+              show={show}
+            />
           ))
         }
-        </div>
+      </div>
     </section>
   )
 }

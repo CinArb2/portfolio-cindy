@@ -40,15 +40,23 @@ const Navbar = () => {
       </div>
       <div  className={`${styles.listLinks} ${open ? styles.active : ''}`}>
         <div className={styles.listNav}>
-          <Link href="#portfolio">
+          <Link href="/">
             <a className={styles.linkNavbar}
               onMouseEnter={handleEnter}
               onClick={handleClick}
-            onMouseLeave={handleMouseLeave}>
+              onMouseLeave={handleMouseLeave}>
+              <p>Home</p>
+            </a>
+          </Link>
+          <Link href="/#portfolio">
+            <a className={styles.linkNavbar}
+              onMouseEnter={handleEnter}
+              onClick={handleClick}
+              onMouseLeave={handleMouseLeave}>
               <p>Portfolio</p>
             </a>
           </Link>
-          <Link href="#about">
+          <Link href="/#about">
             <a className={styles.linkNavbar}
               onMouseEnter={handleEnter}
               onClick={handleClick}
@@ -56,7 +64,7 @@ const Navbar = () => {
               <p>About me</p>
             </a>
           </Link>
-          <Link href="#blog">
+          <Link href="/#blog">
             <a className={styles.linkNavbar}
               onMouseEnter={handleEnter}
               onClick={handleClick}

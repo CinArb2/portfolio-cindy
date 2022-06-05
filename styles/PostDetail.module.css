@@ -1,0 +1,138 @@
+.headerPost{
+  height: 300px;
+  background-color: var(--heading-color);
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.postTitle{
+  color: var(--light-peach);
+  font-size: clamp(1.2rem, 5vw, 3rem);
+}
+
+.postBody{
+  line-height: 2;
+  border: 1px solid var(--heading-color);
+  padding: 2rem;
+}
+
+.postBody img{
+  margin: 2rem auto;
+  object-fit: contain;
+}
+
+.postBody h2{
+  margin: 2rem auto;
+}
+
+.postBody a{
+  color: var(--link);
+}
+
+.postBody pre{
+  padding: 2rem;
+  color: #6cb26d;
+  font-size: 1.1rem;
+  background-color: var(--heading-color);
+  overflow-x: scroll;
+}
+
+.postBody svg{
+  display: none;
+}
+
+/* cursor styles */
+.cursor {
+    position: fixed;
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10000;
+    transform: scale(1);
+}
+
+.cursor-follower {
+    position: fixed;
+    border:1px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(2px, 2px);
+
+}
+
+
+.cursor{
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: var(--heading-color);
+  z-index: 100;
+  top: 0;
+}
+
+.cursor.light{
+  border: 2px solid var(--body-color);
+  background-color: var(--body-color);
+}
+
+.follower{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--heading-color);
+  border-radius: 50%;
+  z-index: 100;
+  top: 0;
+  pointer-events: none;
+  transition: width 200ms ease-in-out;
+}
+
+.follower.grow{
+  width: 80px;
+  height: 80px;
+  background: white;
+  mix-blend-mode: difference; 
+  border: none;
+}
+
+.follower.light{
+  border: 2px solid var(--body-color);
+}
+
+/* Background Color */
+
+.bgColor{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: multiply;
+  background-color:hsla(61,0%,100%,1);
+  background-image:
+  radial-gradient(at 100% 0%, hsla(23,58%,72%,0.49) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(276,45%,29%,0.36) 0px, transparent 50%);
+  z-index: -1;
+}
+
+.bgImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--bg-img);
+  opacity: 0.5;
+  z-index: -2;
+}

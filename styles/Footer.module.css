@@ -9,6 +9,7 @@
   align-items: center;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
+  text-align: center;
 }
 
 .contacMe{
@@ -16,10 +17,33 @@
   max-width: 600px;
 }
 
+.loaderContainer{
+  height: 220px;
+  width: 100%;
+  display: none;
+  position: relative;
+}
+
+.loaderContainer.visible{
+  display: block;
+}
+
 .textContactme{
   text-align: center;
   font-family: var(--font-heading);
   font-size: clamp(1rem, 7vw, 4rem);
+}
+
+.containerBtnContact{
+  max-width: 150px;
+  margin: 2rem auto;
+  animation: rotating 40s linear infinite;
+  cursor: pointer;
+  display: block;
+}
+
+.containerBtnContact.visible{
+  display: none;
 }
 
 .listSocial{
@@ -34,6 +58,20 @@
 .socials{
   font-size: 2rem;
   margin-inline: 1rem;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
+}
+
+.socials:hover{
+  transform: scale(1.5);
+}
+
+.socials:hover{
+  color: var(--pale-purple)
+}
+
+.portfolioDetail{
+  padding-top: 2rem;
 }
 
 @media screen and (max-width: 464px){
@@ -44,5 +82,23 @@
 
   .listSocial > *{
     padding-block: 1rem;
+  }
+}
+
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

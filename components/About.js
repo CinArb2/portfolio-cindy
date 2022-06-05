@@ -50,16 +50,10 @@ const About = () => {
       <div className={styles.containerAbout}>
         <div>
           <div className={styles.decoration}></div>
-          <p className={styles.textAbout} ref={text}>
-            Hi Everyone, I am a Front End developer from Colombia, writing code and moving pixels in the WWW.
-            <br/>
-            I'm a self-motivated learner with strong organisation, time management and communication skills.
-            I love exploring, creating and I consider myself a lifelong learner.
-            <br/>
-            Although I graduated as an industrial engineer from university, I was always curious about the world of web development, and that is how about 1 year ago I have embarked on this path of learning it.
-            <br />
-            Below you will find a list of technologies I have worked with.
-          </p>
+          <div className={styles.textAbout} ref={text}>
+            <p>Hi Everyone, I am a Front End developer from Colombia, self-motivated learner with strong organization, time management and communication skills.</p>
+            <p>Although I graduated as an Industrial Engineer from university, I was always curious about the world of web development, and that is how about 1 year ago I embarked on this path of learning it.</p>
+          </div>
         </div>
         <h2 className={styles.heading}
           ref={title}

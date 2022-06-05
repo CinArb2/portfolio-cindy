@@ -112,6 +112,9 @@
 }
 
 
+
+/* cursor styles */
+
 .cursor {
     position: fixed;
     background-color: black;
@@ -138,9 +141,6 @@
     transform: translate(2px, 2px);
 
 }
-
-
-/* cursor styles */
 
 .cursor{
   position: fixed;
@@ -186,25 +186,6 @@
     width: 100%;
     flex-direction: column;
   }
-}
-
-
-.preLoader{
-  position: fixed;
-  background-color: var(--heading-color);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  display: grid;
-  place-content: center;
-}
-
-.preLoaderText{
-  font-size: 10vw;
-  color: var(--body-color);
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 }
 
 .bgColor{

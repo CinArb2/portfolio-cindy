@@ -5,6 +5,12 @@
   --heading-color: #232020;
   --body-color: white;
   --light-gray: #938f90;
+  --light-peach: #f3e6e0;
+  --link: #30309c;
+  --pale-green: #dbf4e9;
+  --pale-purple: #D9CCF4;
+  --pale-blue: #DAF1FF;
+  --pale-lime: #D0DC7A;
   /* --font-body: 'Work Sans', sans-serif; */
   --font-body: 'Open Sans', sans-serif;
   /* --font-heading: 'Space Grotesk', sans-serif; */
@@ -65,7 +71,6 @@ body {
   cursor: none;
   position: relative;
   padding: 1rem;
-  overflow-y: hidden;
   color: var(--heading-color);
 }
 

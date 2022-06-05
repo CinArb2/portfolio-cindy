@@ -10,7 +10,6 @@
 }
 
 .iconsTag{
-  /* font-family: var(--font-heading); */
   font-size: 0.8rem;
   opacity: 0;
   transition: opacity 200ms ease-in-out;
@@ -26,5 +25,5 @@
 }
 
 .iconsSkills.show{
-  color: #3cb98f;
+  color: var(--pale-green);
 }

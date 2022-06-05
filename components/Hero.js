@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import CursorContext from '../context/CursorContext';
 import { BsArrowUpRight } from 'react-icons/bs';
 import Button from './Button';
+import Link from 'next/link';
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -51,8 +52,14 @@ const Hero = () => {
           >
             Front-end developer
           </h1>
-          <Button>Download cv</Button>
-          <Button>Contact me</Button>
+          <Button >Download cv</Button>
+          <Link href={"#contact"}>
+            <a>
+              <Button >
+                Contact me
+              </Button>
+            </a>
+          </Link>
         </div>
         <div className={styles.containerImage} ref={imgRef}>
           <img src='profilePicture9.jpg' alt="" />

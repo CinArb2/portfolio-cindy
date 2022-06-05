@@ -26,7 +26,7 @@
 .containerImage img{
   object-fit: cover;
   width: 90%;
-  border-radius: 40%;
+  border-radius: 50%;
   max-width: 500px;
   margin: 0 auto;
   border: var(--border-px) solid var(--heading-color);
@@ -63,7 +63,7 @@
 @media screen and  (max-width: 880px){
   .containerHero{
     padding-top: 2rem;
-    min-height: 85vh;
+    min-height: 65vh;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
