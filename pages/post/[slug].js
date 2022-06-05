@@ -26,10 +26,10 @@ const PostDetail = ({ post }) => {
   const cursorMove = (e) => {
     const { clientX, clientY } = e;
 
-      const mouseX = clientX;
-      const mouseY = clientY;
+    const mouseX = clientX;
+    const mouseY = clientY;
       
-      cursor.current?.style.transform = `translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)`
+      cursor.current.style.transform = `translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)`
 
       
         gsap.to(follower.current,
