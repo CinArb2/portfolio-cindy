@@ -129,13 +129,13 @@ const Footer = () => {
           <p>© 2022</p>
         </div>
         <div>
-          <a href="https://github.com/CinArb2" target="_blank" >
+          <a href="https://github.com/CinArb2" rel="noopener" >
             <AiFillGithub className={styles.socials} />
           </a>
-          <a href="https://www.linkedin.com/in/cindy-paola-a-b55583224/" target="_blank" >
+          <a href="https://www.linkedin.com/in/cindy-paola-a-b55583224/" rel="noopener" >
             <GrLinkedin className={styles.socials} />
           </a>
-          <a href="https://dev.to/cinarb2" target="_blank" >
+          <a href="https://dev.to/cinarb2" rel="noopener" >
             <FaDev className={styles.socials}/>
           </a>
         </div>
