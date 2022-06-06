@@ -24,17 +24,6 @@
   justify-content: center;
 }
 
-.asterisk {
-  display: inline-block;
-  width: 3vw;
-  line-height: 0;
-  animation: animate-rotate 10s infinite linear;
-}
-
-.asterisk img{
-  display: inline;
-}
-
 @media screen and (max-width: 768px){
   .containerProjects{
     margin-top: 12rem;

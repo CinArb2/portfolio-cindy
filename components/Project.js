@@ -34,12 +34,12 @@ const Project = ({ data, handleClick, show}) => {
             <p>{data.description}</p>
           </div>
           <div className={styles.projectButtons}>
-            <a href={data.gitUrl} rel="noopener">
+            <a href={data.gitUrl} target="_blank" rel="noopener noreferrer">
               <Button >
                 View code
               </Button>
             </a>
-            <a href={data.urlLive} rel="noopener">
+            <a href={data.urlLive} target="_blank" rel="noopener noreferrer">
               <Button >
                   View site
               </Button>
