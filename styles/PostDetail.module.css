@@ -20,7 +20,9 @@
 
 .postBody img{
   margin: 2rem auto;
+  width: 100%;
   object-fit: contain;
+  height: 100%;
 }
 
 .postBody h2{
@@ -29,6 +31,7 @@
 
 .postBody a{
   color: var(--link);
+  word-break: break-all;
 }
 
 .postBody pre{
