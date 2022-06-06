@@ -10,8 +10,6 @@
 .heading{
   font-size: clamp(3rem, 7vw, 7rem);
   width: fit-content;
-  opacity: 0;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   margin: 2rem 5rem 3rem auto;
 }
 

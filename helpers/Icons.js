@@ -9,7 +9,7 @@ import { BsBootstrap } from 'react-icons/bs';
 const icons = [
   {
     id: 1,
-    name: 'html',
+    name: 'Html',
     icon: <AiOutlineHtml5 />,
   },
   {

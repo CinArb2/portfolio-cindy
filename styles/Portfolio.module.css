@@ -2,9 +2,7 @@
   min-height: 100vh;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
-  /* display: grid; */
   padding-block: 5vh;
-  /* gap: 2rem; */
   padding-inline: 2rem;
   
 }
@@ -12,8 +10,6 @@
 .heading{
   font-size: clamp(3rem, 7vw, 7rem);
   width: max-content;
-  opacity: 0;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   padding-left: 1rem;
   margin-bottom: 2rem;
 }

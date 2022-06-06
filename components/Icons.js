@@ -1,10 +1,11 @@
 import styles from '../styles/Icons.module.css'
 
-const Icons = ({iconInfo, show}) => {
+const Icons = ({iconInfo}) => {
   return (
     <>
-      <span className={`${styles.iconsTag} ${show === iconInfo.id? styles.show: ''}`}>{iconInfo.name}</span>
-      <span className={`${styles.iconsSkills} ${show === iconInfo.id? styles.show: ''}`}>
+      <span
+        className={styles.iconsSkills}
+      >
         {iconInfo.icon}
       </span>
     </>
