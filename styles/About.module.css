@@ -22,7 +22,7 @@ background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.60000000
 
 
 .heading{
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(2.5rem, 7vw, 7rem);
   border-left: var(--border-px) solid var(--heading-color);
   text-align: left;
   writing-mode: vertical-rl;
@@ -35,11 +35,9 @@ background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.60000000
   max-width: 1000px;
   min-height: 50vh;
   font-size: 1.3rem;
-  padding-left: 3rem;
-  padding-block: 1rem;
-  max-width: 80%;
   display: grid;
   place-content: center;
+  padding-inline: 1rem;
 }
 
 .textAbout p{

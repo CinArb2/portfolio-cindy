@@ -1,7 +1,7 @@
 const projects = [
   {
     id: 1,
-    img: 'ibuy_gif.gif',
+    img: 'ibuyGifc.gif',
     tags: ['React', 'Redux', 'Node.js', 'Express', 'Firebase'],
     folderInfo: 'Full Stack App',
     title: 'IBuy Marketplace',
@@ -11,7 +11,7 @@ const projects = [
   },
   {
     id: 2,
-    img: 'towj_gif.gif',
+    img: 'oneWayc.gif',
     tags: ['React', 'Next JS', 'Css Modules', 'GraphQL'],
     folderInfo: 'Headless Website',
     title: 'The One Way Journey Blog',

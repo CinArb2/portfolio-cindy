@@ -11,7 +11,9 @@ const Project = ({ data, handleClick, show}) => {
         className={show === data.id ? `${styles.folderForm} ${styles.active }` : styles.folderForm}
         onClick={() => handleClick(data.id)}
       >
-        {data.folderInfo}
+        <span>
+         {data.folderInfo}
+        </span>
       </div>
       <div
         className={show === data.id ? `${styles.project} ${styles.active }` : styles.project}
