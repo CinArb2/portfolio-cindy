@@ -2,28 +2,21 @@
 .iconsSkills{
   border-radius: 50%;
   display: block;
-  font-size: clamp(1.5rem, 5vw, 5rem);
+  font-size: 4rem;
   color: #c6bebe;
   transition: transform 00ms ease-in-out,
    color 400ms ease-in-out
   ;
 }
 
-.iconsTag{
-  font-size: 0.8rem;
-  opacity: 0;
-  transition: opacity 200ms ease-in-out;
-  display: inline-block;
-  max-width: 100px;
-  line-height: 1;
-  color: #e0dede;
-  padding-bottom: 0.3rem;
+.iconTag{
+  display: block;
+  color: #c6bebe;
+  margin-top: 0.4rem;
 }
 
-.iconsTag.show{
-  opacity: 1;
-}
-
-.iconsSkills.show{
-  color: var(--pale-green);
+@media screen and (max-width: 540px){
+  .iconsSkills{
+    font-size: 2rem;
+  }
 }

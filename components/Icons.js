@@ -8,6 +8,11 @@ const Icons = ({iconInfo}) => {
       >
         {iconInfo.icon}
       </span>
+      <span
+        className={styles.iconTag}
+      >
+        {iconInfo.name}
+      </span>
     </>
   )
 }
