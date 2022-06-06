@@ -38,7 +38,7 @@ const Hero = () => {
           </Link>
         </div>
         <div className={styles.containerImage}>
-          <img src='profilePicture9.jpg' alt="" />
+          <img src='profile.jpg' alt="" />
         </div>
       </div>
     </section>
