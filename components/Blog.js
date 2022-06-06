@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../styles/Blog.module.css'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef, useContext } from "react";
+import { useContext } from "react";
 import CursorContext from '../context/CursorContext';
 
 import IndividualBlog from './IndividualBlog'
@@ -10,33 +10,6 @@ import IndividualBlog from './IndividualBlog'
 const Blog = ({ data }) => {
   gsap.registerPlugin(ScrollTrigger);
   const { handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
-  const headingRef = useRef(null);
-  const sectionRef = useRef(null);
-  const containerPost = useRef(null);
-  const asteriskRef = useRef(null)
-
-  useEffect(() => {
-    const elements = gsap.utils.toArray(containerPost.current.children)
-    
-
-    gsap.to(headingRef.current, {
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
-      opacity: 1,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top center",
-      }
-    })
-    gsap.to(elements, {
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)',
-      opacity: 1,
-      stagger: 0.5,
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top center",
-      }
-    })
-  }, [])
 
    const handleEnter = () => {
     handleMouseEnter()
@@ -46,16 +19,14 @@ const Blog = ({ data }) => {
     handleMouseLeaving()
   }
 
-
   return (
     <section
       id='blog'
       className={styles.wrapperBlog}
-      ref={sectionRef}
     >
       <div className={styles.containerBlog}>
         <div className={styles.decoration}></div>
-        <div className={styles.containerPosts} ref={containerPost}>
+        <div className={styles.containerPosts}>
           {data.map(post => (
             <IndividualBlog key={post.id} data={post}/>
           ))}
@@ -65,7 +36,6 @@ const Blog = ({ data }) => {
         <h2
           onMouseEnter={handleEnter}
           onMouseLeave={handleMouseLeave}
-          ref={headingRef}
           className={styles.heading}>Blog</h2>
       </div>
       
