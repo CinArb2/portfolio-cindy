@@ -31,7 +31,11 @@ const Hero = () => {
           >
             Front-end developer
           </h1>
-          <Button >Download cv</Button>
+          <a href='/Resume.pdf' download
+            target="_blank" rel="noopener noreferrer"
+          >
+            <Button >Download cv</Button>
+          </a>
           <Link href={"#contact"}>
             <a>
               <Button >
