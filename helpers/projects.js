@@ -5,7 +5,7 @@ const projects = [
     tags: ['React', 'Redux', 'Node.js', 'Express', 'Firebase'],
     folderInfo: 'Full Stack App',
     title: 'IBuy Marketplace',
-    description: 'A Facebook marketplace like Full stack project. Basically users can visit the site and create an account to add, remove, update products from their cart. When users create an account they have access to create a shop where they can put products for sale, and manage them from a shop panel. If they wish, they can also unsubscribe the shop and the user account.',
+    description: 'React, Redux, Node.js, Express.js Built a fictional Marketplace App from Scratch.   For the backend side, I created the REST APIs with Express and use these endpoints in the React frontend to interact with our backend part. For the front end I used Redux for state management,  Firebase to handle product and shop images, and followed the best practices to implement Authentication using JSON Web Tokens (JWT).',
     gitUrl: 'https://github.com/CinArb2/full-stack-marketplace-app.git',
     urlLive: 'https://ibuy.netlify.app/'
   },
