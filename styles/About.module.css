@@ -17,18 +17,18 @@ background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.60000000
 
 .containerAbout{
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 1fr 5fr;
 }
 
 
 .heading{
   font-size: clamp(2.5rem, 7vw, 7rem);
-  border-left: var(--border-px) solid var(--heading-color);
+  border-right: var(--border-px) solid var(--heading-color);
   text-align: left;
-  writing-mode: vertical-rl;
+  /* writing-mode: vertical-rl; */
   text-orientation: mixed;
-  padding-top: 3rem;
-  
+  padding-top: 1rem;
+  padding-inline: 1rem;
 }
 
 .textAbout{
@@ -38,6 +38,7 @@ background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.60000000
   display: grid;
   place-content: center;
   padding-inline: 1rem;
+  margin: 0 auto;
 }
 
 .textAbout p{

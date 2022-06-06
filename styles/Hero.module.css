@@ -19,6 +19,7 @@
 .containerImage{
   z-index: 2;
   align-self: center;
+  position: relative;
 }
 
 .containerImage img{
@@ -30,10 +31,23 @@
   border: var(--border-px) solid var(--heading-color);
 }
 
+.containerSocials{
+  margin-block: 1rem;
+}
+
+.socials{
+  font-size: 2.3rem;
+  margin-inline: 1rem;
+  cursor: pointer;
+  transition: transform 20ms ease;
+}
+
+.socials:hover{
+  transform: scale(1.2);
+}
 
 .containerTitle{
   line-height: 1.2;
-  font-size: clamp(1rem, 5vw, 5rem);
   align-self: flex-end;
   padding-bottom: 2rem;
   padding-left: 2rem;
@@ -52,6 +66,7 @@
   font-size: clamp(2rem, 6vw, 6rem);
 }
 
+
 @media screen and  (max-width: 880px){
   .containerHero{
     padding-top: 2rem;
@@ -62,6 +77,7 @@
     text-align: center;
     gap: 2rem;
   }
+
   .containerImage{
     order: -1;
     border-left: none;

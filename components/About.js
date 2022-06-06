@@ -26,6 +26,12 @@ const About = () => {
       className={styles.wrapperAbout}
       id='about'>
       <div className={styles.containerAbout}>
+        <h2 className={styles.heading}
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          About
+        </h2>
         <div>
           <div className={styles.decoration}></div>
           <div className={styles.textAbout}>
@@ -33,12 +39,7 @@ const About = () => {
             <p>Although I graduated as an Industrial Engineer from university, I was always curious about the world of web development, and that is how about 1 year ago I embarked on this path of learning it.</p>
           </div>
         </div>
-        <h2 className={styles.heading}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          About
-        </h2>
+        
       </div>
       <div className={styles.skills}>
         <div className={styles.skillsHeading}>

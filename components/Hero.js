@@ -3,6 +3,9 @@ import styles from '../styles/Hero.module.css'
 import CursorContext from '../context/CursorContext';
 import Button from './Button';
 import Link from 'next/link';
+import { AiFillGithub } from 'react-icons/ai';
+import { GrLinkedin } from 'react-icons/gr';
+import { FaDev } from 'react-icons/fa';
 
 const Hero = () => {
   
@@ -36,9 +39,21 @@ const Hero = () => {
               </Button>
             </a>
           </Link>
+          <div className={styles.containerSocials}>
+            <a href="https://github.com/CinArb2" rel="noopener" >
+              <AiFillGithub className={`${styles.socials} ${styles.git}`} />
+            </a>
+            <a href="https://www.linkedin.com/in/cindy-paola-a-b55583224/" rel="noopener" >
+              <GrLinkedin className={`${styles.socials} ${styles.linkedin}`} />
+            </a>
+            <a href="https://dev.to/cinarb2" rel="noopener" >
+              <FaDev className={`${styles.socials} ${styles.dev}`}/>
+            </a>
+          </div>
         </div>
         <div className={styles.containerImage}>
           <img src='profile.jpg' alt="" />
+          
         </div>
       </div>
     </section>
