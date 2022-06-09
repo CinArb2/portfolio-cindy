@@ -2,6 +2,11 @@
   max-width: 1500px;
   margin: 0 auto 150px;
   position: absolute;
+  transition: transform 200ms ease-in-out;
+}
+
+.projectWrapper:hover{
+  transform: translateY(-10px);
 }
 
 .folderForm{
@@ -22,29 +27,6 @@
   cursor: pointer;
 }
 
-.folderForm:hover{
-  transform: translateY(-10px);
-  z-index: 5;
-}
-
-.folderForm.active{
-  background-color: var(--pale-green);
-  color: black;
-  transform: translateY(-10px);
-  z-index: 5;
-}
-
-.projectWrapper:nth-child(2) .folderForm.active {
-  background-color: var(--pale-purple);
-}
-
-.projectWrapper:nth-child(3) .folderForm.active {
-  background-color: var(--pale-lime);
-}
-
-.projectWrapper:nth-child(4) .folderForm.active {
-  background-color: var(--pale-blue);
-}
 
 .project{
   border: var(--border-px) solid var(--heading-color);
@@ -55,7 +37,6 @@
   grid-template-columns: 60% 40%;
   height: 600px;
   overflow: hidden;
-  visibility: hidden;
 }
 
 .project button{
@@ -63,7 +44,6 @@
 }
 
 .project.active{
-  visibility: visible;
   z-index: 100;
 }
 
@@ -84,7 +64,23 @@
   gap: 1rem;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #f4ece8;
+  background-color: #f1e9e2;
+  position: relative;
+}
+
+.projectOverlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/paperBg.jpeg');
+  background-position: 60% 60%;
+  background-size: auto;
+  opacity: 0.25;
+  z-index: 10;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 .projectButtons{
@@ -121,25 +117,36 @@
   padding-bottom: 1rem;
 }
 
-
-.projectWrapper:first-child .project{
-  visibility: visible;
+.projectWrapper.active{
   z-index: 100;
 }
 
+.projectWrapper:nth-child(2){
+  top: -40px;
+  right: 0;
+}
+
+.projectWrapper:nth-child(3){
+  top: -65px;
+  right: -20px;
+}
+
+.projectWrapper:nth-child(4){
+  top: -90px;
+  right: -40px;
+}
+
 .projectWrapper:nth-child(2) .folderForm{
-  left: 160px;
+  left: 130px;
 
 }
 
 .projectWrapper:nth-child(3) .folderForm{
-  left: 342px;
-
+  left: 280px;
 }
 
 .projectWrapper:nth-child(4) .folderForm{
-  left: 517px;
-
+  left: 420px;
 }
 
 

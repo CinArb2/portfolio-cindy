@@ -6,11 +6,6 @@ import icons from '../helpers/Icons'
 import { useStore } from '../storeZustand/store';
 
 const About = () => {
-  // const { handleMouseEnter,
-  //   handleMouseLeaving,
-  //   handleLightCoursor,
-  //   handleDarkCoursor
-  // } = useContext(CursorContext)
   const growCircle = useStore((state) => state.growCircle)
   const decreaseCircle = useStore((state) => state.decreaseCircle)
   const circleLight = useStore((state) => state.circleLight)

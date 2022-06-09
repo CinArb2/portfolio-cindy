@@ -4,10 +4,19 @@
   display: block;
   font-size: 4rem;
   color: #c6bebe;
-  transition: transform 00ms ease-in-out,
+  
+}
+
+.iconsSkills svg{
+  transition: transform 100ms ease-in-out,
    color 400ms ease-in-out
   ;
 }
+
+.iconsSkills svg:hover{
+  transform: scale(1.4) rotate(-10deg);
+}
+
 
 .iconTag{
   display: block;

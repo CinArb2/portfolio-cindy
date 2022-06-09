@@ -6,18 +6,15 @@ import Button from './Button';
 const Project = ({ data, handleClick, show}) => {
 
   return (
-    <div className={styles.projectWrapper}>
-      <div
-        className={show === data.id ? `${styles.folderForm} ${styles.active }` : styles.folderForm}
-        onClick={() => handleClick(data.id)}
-      >
+    <div className={show === data.id ? `${styles.projectWrapper} ${styles.active}` : styles.projectWrapper}
+      onClick={() => handleClick(data.id)}
+    >
+      <div className={styles.folderForm}>
         <span>
          {data.folderInfo}
         </span>
       </div>
-      <div
-        className={show === data.id ? `${styles.project} ${styles.active }` : styles.project}
-      >
+      <div className={styles.project}>
         <div className={styles.containerImage}>
           <img src={data.img} alt="project blog" />
         </div>
@@ -34,6 +31,7 @@ const Project = ({ data, handleClick, show}) => {
             <p>{data.description}</p>
           </div>
           <div className={styles.projectButtons}>
+            <div className={styles.projectOverlay}></div>
             <a href={data.gitUrl} target="_blank" rel="noopener noreferrer">
               <Button >
                 View code
