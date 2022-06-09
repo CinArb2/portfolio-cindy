@@ -4,21 +4,26 @@ import { GrLinkedin } from 'react-icons/gr';
 import { FaDev } from 'react-icons/fa';
 import { BsHeartHalf } from 'react-icons/bs';
 import React, { useContext, useState } from 'react'
-import CursorContext from '../context/CursorContext';
 import { SiNextdotjs } from 'react-icons/si';
 import Form from './Form';
 import LoaderContext from '../context/LoaderContext';
 import Loader from '../components/Loader'
 import Message from './Message';
+import { useStore } from '../storeZustand/store';
 
 const Footer = () => {
-  const { handleLightCoursor, handleDarkCoursor, handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
+  const growCircle = useStore((state) => state.growCircle)
+  const decreaseCircle = useStore((state) => state.decreaseCircle)
+  const circleLight = useStore((state) => state.circleLight)
+  const circleDark = useStore((state) => state.circleDark)
+  
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     subject: '',
     comment: '',
   })
+
   // form
   const [isVisible, setVisible] = useState(false)
   const { loading, setLoading } = useContext(LoaderContext);
@@ -74,11 +79,19 @@ const Footer = () => {
   }
 
   const handleEnter = () => {
-    handleMouseEnter()
+    growCircle()
   }
 
   const handleMouseLeave = () => {
-    handleMouseLeaving()
+    decreaseCircle()
+  }
+
+  const handleLightCursor = () => {
+    circleLight()
+  }
+
+  const handleDarkCursor = () => {
+    circleDark()
   }
 
   const handleBtnContact = () => {
@@ -90,10 +103,9 @@ const Footer = () => {
     <footer
       id='contact'
       className={styles.footer}
-      onMouseEnter={() => handleLightCoursor()}
-      onMouseLeave={() => handleDarkCoursor()}
+      onMouseEnter={handleLightCursor}
+      onMouseLeave={handleDarkCursor}
     >
-      {/* <Message/> */}
       <div className={styles.contacMe}>
         <p className={styles.textContactme}
           onMouseEnter={handleEnter}

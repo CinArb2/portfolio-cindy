@@ -1,6 +1,4 @@
 import sendgrid from "@sendgrid/mail";
-import { useContext } from "react";
-import LoaderContext from "../../context/LoaderContext";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 

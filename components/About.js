@@ -1,6 +1,4 @@
 import styles from '../styles/About.module.css'
-import { useContext } from "react";
-import CursorContext from '../context/CursorContext';
 import Icons from './Icons'
 import icons from '../helpers/Icons'
 import { useStore } from '../storeZustand/store';

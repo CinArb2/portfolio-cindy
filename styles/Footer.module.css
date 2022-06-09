@@ -42,6 +42,18 @@
   display: block;
 }
 
+.containerBtnContact img{
+  transition: transform 300ms ease-in-out;
+}
+
+.containerBtnContact:hover{
+  animation: unset;
+}
+
+.containerBtnContact:hover img{
+  transform: scale(1.15);
+}
+
 .containerBtnContact.visible{
   display: none;
 }

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useContext, useEffect, useRef } from 'react'
 import About from '../components/About'
 import Blog from '../components/Blog'
 import Hero from '../components/Hero'
