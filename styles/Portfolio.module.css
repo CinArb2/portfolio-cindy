@@ -18,14 +18,17 @@
   padding-inline: 2rem;
   min-height: 720px;
   position: relative;
-  /* display: flex; */
-  /* align-items: center; */
   max-width: 1550px;
   margin: 5rem auto 0;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 735px){
+  .wrapperPortfolio{
+    padding-inline: 0.5rem;
+  }
+
   .containerProjects{
-    margin-top: 12rem;
+    padding-inline: 0.5rem;
+    margin-block: 0.5rem;
   }
 }

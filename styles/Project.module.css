@@ -1,5 +1,5 @@
 .projectWrapper{
-  width: 850px;
+  width: 900px;
   margin: 0 auto 4rem;
   position: absolute;
   transition: transform 200ms ease-in-out;
@@ -126,82 +126,49 @@
   padding-bottom: 1rem;
 }
 
+@media screen and (max-width: 735px){
+  .projectWrapper{
+    width: 100%;
+    position: relative;
+    display: block;
+  }
 
+  .projectWrapper:first-child{
+  transform: translate(0);
+  }
+  
+  .projectWrapper:nth-child(2) {
+    left: 0;
+    transform: translateY(0);
+  }
 
-@media screen and (max-width: 935px){
+  .projectWrapper:nth-child(3) {
+    left: 0;
+    transform: translateY(0);
+  }
+
+  .projectWrapper:nth-child(4) {
+    left: 0;
+    transform: translateY(0);
+  }
+
+  .projectWrapper:hover ~ .projectWrapper {
+    transform: translate(0) rotate(0);
+  }
+
   .project{
-    grid-template-columns: 50% 50%;
+    display: block;
+    height: unset;
   }
-}
-
-@media screen and (max-width: 768px){
-  .project{
-    grid-template-columns: unset;
-    grid-template-rows: 40% 60%;
-    height: 800px;
+  
+  .containerImage{
+    height: 300px;
   }
 
-  .title{
-    font-size: 1.3rem;
-  }
-
-  .tags{
-    padding-block: 0;
-  }
   .projectBody{
-    border-left: unset;
-    border-top: 1px solid var(--heading-color);
+    border-top: var(--border-px) solid var(--heading-color);
+    border-right: unset;
+    padding: 1rem;
   }
 
-  /* .folderForm.active{
-    color: black;
-    transform: translateY(-10px);
-    z-index: 5;
-  } */
-
-  .folderForm{
-    top: -55px;
-    width: 95px;
-    font-size: 0.8rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding-right: 1rem;
-  }
-
-  .projectWrapper:nth-child(2) .folderForm{
-  left: 90px;
-  }
-
-  .projectWrapper:nth-child(3) .folderForm{
-  left: 180px;
-  }
-
-  .projectWrapper:nth-child(4) .folderForm{
-  left: 270px;
-  }
-}
-
-@media screen and (max-width: 488px){
-  .project{
-    grid-template-rows: 30% 70%;
-  }
-
-  .folderForm{
-    top: -55px;
-    width: 75px;
-    font-size: 0.7rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding-right: 0.7rem;
-    padding-left: 0.3rem;
-  }
-  .projectWrapper:nth-child(2) .folderForm{
-  left: 72px;
-  }
-  .projectWrapper:nth-child(3) .folderForm{
-  left: 142px;
-  }
-  .projectWrapper:nth-child(4) .folderForm{
-  left: 212px;
-  }
 }
