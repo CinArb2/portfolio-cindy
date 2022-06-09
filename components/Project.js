@@ -9,11 +9,6 @@ const Project = ({ data, handleClick, show}) => {
     <div className={show === data.id ? `${styles.projectWrapper} ${styles.active}` : styles.projectWrapper}
       onClick={() => handleClick(data.id)}
     >
-      <div className={styles.folderForm}>
-        <span>
-         {data.folderInfo}
-        </span>
-      </div>
       <div className={styles.project}>
         <div className={styles.containerImage}>
           <img src={data.img} alt="project blog" />
