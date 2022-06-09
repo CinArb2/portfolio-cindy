@@ -1,49 +1,21 @@
 import Head from 'next/head'
-import React, { useContext, useEffect, useRef } from 'react'
 import Layout from '../../components/Layout'
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import CursorContext from '../../context/CursorContext'
 import styles from '../../styles/PostDetail.module.css'
+import Cursor from '../../components/Cursor';
+import { useStore } from '../../storeZustand/store';
 
 
 const PostDetail = ({ post }) => {
-  gsap.registerPlugin(ScrollTrigger);
-  const cursor = useRef()
-  const follower = useRef()
-  const { grow, light } = useContext(CursorContext)
-  const { handleLightCoursor, handleDarkCoursor, handleMouseEnter, handleMouseLeaving } = useContext(CursorContext)
+  const growCircle = useStore((state) => state.growCircle)
+  const decreaseCircle = useStore((state) => state.decreaseCircle)
   
-
   const handleEnter = () => {
-    handleMouseEnter()
+    growCircle()
   }
 
   const handleMouseLeave = () => {
-    handleMouseLeaving()
+    decreaseCircle()
   }
-
-  const cursorMove = (e) => {
-    const { clientX, clientY } = e;
-
-    const mouseX = clientX;
-    const mouseY = clientY;
-      
-      cursor.current.style.transform = `translate3d(${mouseX - cursor.current.clientWidth / 2}px, ${mouseY - cursor.current.clientHeight / 2}px, 0)`
-
-      
-        gsap.to(follower.current,
-          {
-            transform: `translate3d(${mouseX - follower.current.clientWidth / 2}px, ${mouseY - follower.current.clientHeight / 2}px, 0)`,
-            ease: "none",
-        //     stagger: 0.1,
-       })
-  }
-
-  useEffect(() => {
-    document.addEventListener('mousemove', cursorMove)
-    return () => document.removeEventListener('mousemove', cursorMove);
-  }, [])
 
   return (
     <>
@@ -53,27 +25,21 @@ const PostDetail = ({ post }) => {
       </Head>
       <Layout>
         <header className={styles.headerPost}
-          onMouseEnter={() => handleLightCoursor()}
-          onMouseLeave={() => handleDarkCoursor()}
+          // onMouseEnter={() => handleLightCoursor()}
+          // onMouseLeave={() => handleDarkCoursor()}
         >
           <h1 className={styles.postTitle}
             onMouseEnter={handleEnter}
             onMouseLeave={handleMouseLeave}
           >{post.title}</h1>
         </header>
-        <main className={styles.postBody}>
+        <section className={styles.postBody}>
           <div 
             dangerouslySetInnerHTML={{__html: post.body_html}}
             />
-        </main>
+        </section>
       </Layout>
-      <div className={`${styles.cursor} ${light ? styles.light : ''}`} ref={cursor}></div>
-      <div
-        className={`${styles.follower} 
-        ${grow ? styles.grow : ''}
-        ${light ? styles.light : ''}
-        `} ref={follower}>
-      </div>
+      <Cursor/>
       <div className={styles.bgColor}></div>
       <div className={styles.bgImage}></div>
     </>

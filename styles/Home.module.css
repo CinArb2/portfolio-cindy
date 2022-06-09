@@ -208,7 +208,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: var(--bg-img);
-  opacity: 0.5;
+  background-image: url('/paperBg.jpeg');
+  background-position: 50% 50%;
+  background-size: auto;
+  opacity: 0.3;
   z-index: -2;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }

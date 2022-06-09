@@ -1,22 +1,22 @@
 import React, { useContext } from 'react'
 import styles from '../styles/Hero.module.css'
-import CursorContext from '../context/CursorContext';
 import Button from './Button';
 import Link from 'next/link';
 import { AiFillGithub } from 'react-icons/ai';
 import { GrLinkedin } from 'react-icons/gr';
 import { FaDev } from 'react-icons/fa';
+import { useStore } from '../storeZustand/store';
 
 const Hero = () => {
-  
-  const { handleMouseEnter, handleMouseLeaving} = useContext(CursorContext)
+  const growCircle = useStore((state) => state.growCircle)
+  const decreaseCircle = useStore((state) => state.decreaseCircle)
 
   const handleEnter = () => {
-    handleMouseEnter()
+    growCircle()
   }
 
   const handleMouseLeave = () => {
-    handleMouseLeaving()
+    decreaseCircle()
   }
 
   return (
@@ -44,14 +44,18 @@ const Hero = () => {
             </a>
           </Link>
           <div className={styles.containerSocials}>
-            <a href="https://github.com/CinArb2" target="_blank" rel="noopener noreferrer" >
-              <AiFillGithub className={`${styles.socials} ${styles.git}`} />
+            <a href="https://github.com/CinArb2" target="_blank" rel="noopener noreferrer"
+              className={styles.socials}
+            >
+              <AiFillGithub  />
             </a>
-            <a href="https://www.linkedin.com/in/cindy-paola-a-b55583224/" target="_blank" rel="noopener noreferrer" >
-              <GrLinkedin className={`${styles.socials} ${styles.linkedin}`} />
+            <a href="https://www.linkedin.com/in/cindy-paola-a-b55583224/" target="_blank" rel="noopener noreferrer"
+              className={styles.socials}
+            >
+              <GrLinkedin  />
             </a>
-            <a href="https://dev.to/cinarb2" target="_blank" rel="noopener noreferrer" >
-              <FaDev className={`${styles.socials} ${styles.dev}`}/>
+            <a href="https://dev.to/cinarb2" target="_blank" rel="noopener noreferrer" className={styles.socials}>
+              <FaDev />
             </a>
           </div>
         </div>

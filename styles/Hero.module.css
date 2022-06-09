@@ -32,24 +32,26 @@
 }
 
 .containerSocials{
-  margin-block: 1rem;
+  margin-bottom: 1rem;
 }
 
 .socials{
-  font-size: 2.3rem;
+  font-size: 2rem;
   margin-inline: 1rem;
   cursor: pointer;
-  transition: transform 20ms ease;
 }
 
-.socials:hover{
-  transform: scale(1.2);
+.socials svg{
+  transition: transform 200ms ease;
+}
+
+.socials:hover svg{
+  transform: scale(1.3);
 }
 
 .containerTitle{
   line-height: 1.2;
   align-self: flex-end;
-  padding-bottom: 2rem;
   padding-left: 2rem;
   margin-bottom: 10vh;
 }

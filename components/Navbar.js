@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.css'
-import { gsap } from "gsap";
-import {  useContext, useEffect, useRef, useState } from 'react';
-import CursorContext from '../context/CursorContext'
+import { useState } from 'react';
+import { useStore } from '../storeZustand/store';
 
 const Navbar = () => {
-  const { handleMouseEnter, handleMouseLeaving} = useContext(CursorContext)
+  const growCircle = useStore((state) => state.growCircle)
+  const decreaseCircle = useStore((state) => state.decreaseCircle)
   const [open, setOpen] = useState(false)
   
   const handleClick = () => {
@@ -13,21 +13,21 @@ const Navbar = () => {
   }
 
   const handleEnter =  () => {
-    handleMouseEnter()
+    growCircle()
   }
 
   const handleMouseLeave = () => {
-    handleMouseLeaving()
+    decreaseCircle()
   }
-
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.Link}>
+      <div className={styles.Link}
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <Link href="/" >
           <a className={styles.logo}
-            onMouseEnter={handleEnter}
-            onMouseLeave={handleMouseLeave}
           >CinArb/
           </a>
         </Link>
@@ -38,45 +38,38 @@ const Navbar = () => {
         <span className={open ? styles.active : ''}></span>
         <span className={open ? styles.active : ''}></span>
       </div>
-      <div  className={`${styles.listLinks} ${open ? styles.active : ''}`}>
+      <div className={`${styles.listLinks} ${open ? styles.active : ''}`}
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <div className={styles.listNav}>
           <Link href="/">
             <a className={styles.linkNavbar}
-              onMouseEnter={handleEnter}
-              onClick={handleClick}
-              onMouseLeave={handleMouseLeave}>
+              onClick={handleClick}>
               <p>Home</p>
             </a>
           </Link>
           <Link href="/#portfolio">
             <a className={styles.linkNavbar}
-              onMouseEnter={handleEnter}
-              onClick={handleClick}
-              onMouseLeave={handleMouseLeave}>
+              onClick={handleClick}>
               <p>Portfolio</p>
             </a>
           </Link>
           <Link href="/#about">
             <a className={styles.linkNavbar}
-              onMouseEnter={handleEnter}
-              onClick={handleClick}
-            onMouseLeave={handleMouseLeave}>
+              onClick={handleClick}>
               <p>About me</p>
             </a>
           </Link>
           <Link href="/#blog">
             <a className={styles.linkNavbar}
-              onMouseEnter={handleEnter}
-              onClick={handleClick}
-            onMouseLeave={handleMouseLeave}>
+              onClick={handleClick}>
               <p>Blog</p>
             </a>
           </Link>
           <Link href="#contact">
             <a className={styles.linkNavbar}
-            onMouseEnter={handleEnter}
-            onClick={handleClick}
-            onMouseLeave={handleMouseLeave}>
+            onClick={handleClick}>
               <p>Contact me</p>
             </a>
           </Link>

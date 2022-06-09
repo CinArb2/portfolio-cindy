@@ -20,15 +20,15 @@ background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.60000000
   grid-template-columns: 1fr 5fr;
 }
 
+.wrapperHeadingAbout{
+  border-right: var(--border-px) solid var(--heading-color);
+  padding-inline: 1rem;
+  line-height: 1.1;
+}
+
 
 .heading{
   font-size: clamp(2.5rem, 7vw, 7rem);
-  border-right: var(--border-px) solid var(--heading-color);
-  text-align: left;
-  /* writing-mode: vertical-rl; */
-  text-orientation: mixed;
-  padding-top: 1rem;
-  padding-inline: 1rem;
 }
 
 .textAbout{

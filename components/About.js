@@ -3,21 +3,33 @@ import { useContext } from "react";
 import CursorContext from '../context/CursorContext';
 import Icons from './Icons'
 import icons from '../helpers/Icons'
+import { useStore } from '../storeZustand/store';
 
 const About = () => {
-  const { handleMouseEnter,
-    handleMouseLeaving,
-    handleLightCoursor,
-    handleDarkCoursor
-  } = useContext(CursorContext)
-
+  // const { handleMouseEnter,
+  //   handleMouseLeaving,
+  //   handleLightCoursor,
+  //   handleDarkCoursor
+  // } = useContext(CursorContext)
+  const growCircle = useStore((state) => state.growCircle)
+  const decreaseCircle = useStore((state) => state.decreaseCircle)
+  const circleLight = useStore((state) => state.circleLight)
+const circleDark = useStore((state) => state.circleDark)  
 
   const handleEnter = () => {
-    handleMouseEnter()
+    growCircle()
   }
 
   const handleMouseLeave = () => {
-    handleMouseLeaving()
+    decreaseCircle()
+  }
+
+  const handleDarkZoneEnter = () => {
+    circleLight()
+  }
+
+  const handleDarkZoneLeaving = () => {
+    circleDark()
   }
 
 
@@ -26,12 +38,14 @@ const About = () => {
       className={styles.wrapperAbout}
       id='about'>
       <div className={styles.containerAbout}>
-        <h2 className={styles.heading}
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          About
-        </h2>
+        <div className={styles.wrapperHeadingAbout}>
+          <h2 className={styles.heading}
+            onMouseEnter={handleEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            About
+          </h2>
+        </div>
         <div>
           <div className={styles.decoration}></div>
           <div className={styles.textAbout}>
@@ -39,15 +53,14 @@ const About = () => {
             <p>Although I graduated as an Industrial Engineer from university, I was always curious about the world of web development, and that is how about 1 year ago I embarked on this path of learning it.</p>
           </div>
         </div>
-        
       </div>
       <div className={styles.skills}>
         <div className={styles.skillsHeading}>
           <h2>Skills</h2>
         </div>
         <div className={styles.listSkills}
-          onMouseEnter={() => handleLightCoursor()}
-          onMouseLeave={() => handleDarkCoursor()}
+          onMouseEnter={handleDarkZoneEnter}
+          onMouseLeave={handleDarkZoneLeaving}
         >
           {
             icons.map((iconInfo) => (
