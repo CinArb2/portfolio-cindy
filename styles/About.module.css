@@ -1,5 +1,5 @@
 .wrapperAbout{
-  min-height: 70vh;
+  /* min-height: 70vh; */
   position:relative;
   border-bottom: var(--border-px) solid var(--heading-color);
   border-inline: var(--border-px) solid var(--heading-color);
@@ -8,41 +8,44 @@
 }
 
 .decoration{
-  height: 80px;
-  border-bottom: var(--border-px) solid var(--heading-color);
-background-color: transparent;
-background-size: 6px 6px;
-background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.6000000000000001px, transparent 0, transparent 50%);
+  height: 100%;
+  border-right: var(--border-px) solid var(--heading-color);
+  background-color: transparent;
+  background-size: 6px 6px;
+  background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.6000000000000001px, transparent 0, transparent 50%);
 }
 
 .containerAbout{
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 7fr;
 }
 
 .wrapperHeadingAbout{
-  border-right: var(--border-px) solid var(--heading-color);
+  border-bottom: var(--border-px) solid var(--heading-color);
   padding-inline: 1rem;
   line-height: 1.1;
+  position: relative;
+  overflow: hidden;
+  height: 140px;
 }
-
 
 .heading{
-  font-size: clamp(2.5rem, 7vw, 7rem);
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  font-size: 8rem;
 }
+
 
 .textAbout{
   max-width: 1000px;
-  min-height: 50vh;
   font-size: 1.3rem;
   display: grid;
   place-content: center;
-  padding-inline: 1rem;
+  padding: 5rem 3rem;
   margin: 0 auto;
-}
-
-.textAbout p{
-  margin-block: 1rem;
+  text-align: center;
+  line-height: 2;
 }
 
 .skills{
@@ -61,16 +64,33 @@ background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.60000000
 }
 
 .listSkills{
-  position: relative;
-  padding-block: 2rem;
   background-color: var(--heading-color);
+  overflow:hidden;
+  position: relative;
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
-  padding-inline: 1rem;
+  height: 100%;
+}
+
+.slideTrack{
+  animation: scroll 20s linear infinite;
+  display: flex;
+  width: calc(150px * 30);
+}
+
+.slideTrack:hover{
+  animation-play-state: paused;
+}
+
+.iconCard {
+  height: 100px;
+  width: 150px;
+}
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
 }
 
 .iconCard{
@@ -80,9 +100,30 @@ background-image: repeating-linear-gradient(45deg, #8a8b94 0, #8a8b94 0.60000000
 
 
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 750px){
+  .listSkills{
+    flex-wrap: wrap;
+    overflow: unset;
+    padding-block: 2rem;
+  }
+  .slideTrack{
+    animation: none;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: unset;
+  }
+
+  .iconCard {
+    height: 100px;
+    width: 100px;
+  }
+  .heading{
+    font-size: clamp(3rem, 16vw, 7rem);
+    bottom: 0;
+  }
 
   .textAbout{
-    padding-block: 2rem;
+    padding: 2rem 1rem;
   }
 }

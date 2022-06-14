@@ -8,6 +8,8 @@ import { useStore } from '../../storeZustand/store';
 const PostDetail = ({ post }) => {
   const growCircle = useStore((state) => state.growCircle)
   const decreaseCircle = useStore((state) => state.decreaseCircle)
+  const circleLight = useStore((state) => state.circleLight)
+  const circleDark = useStore((state) => state.circleDark)
   
   const handleEnter = () => {
     growCircle()
@@ -15,6 +17,14 @@ const PostDetail = ({ post }) => {
 
   const handleMouseLeave = () => {
     decreaseCircle()
+  }
+
+  const handleLightCursor = () => {
+    circleLight()
+  }
+
+  const handleDarkCursor = () => {
+    circleDark()
   }
 
   return (
@@ -25,8 +35,8 @@ const PostDetail = ({ post }) => {
       </Head>
       <Layout>
         <header className={styles.headerPost}
-          // onMouseEnter={() => handleLightCoursor()}
-          // onMouseLeave={() => handleDarkCoursor()}
+          onMouseEnter={handleLightCursor}
+          onMouseLeave={handleDarkCursor}
         >
           <h1 className={styles.postTitle}
             onMouseEnter={handleEnter}

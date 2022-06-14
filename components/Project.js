@@ -3,11 +3,10 @@ import styles from '../styles/Project.module.css'
 import Button from './Button';
 
 
-const Project = ({ data, handleClick}) => {
+const Project = ({ data}) => {
 
   return (
-    <div className={styles.projectWrapper}
-      onClick={() => handleClick(data.id)}>
+    <div className={styles.projectWrapper}>
       <div className={styles.project}>
         <div className={styles.containerImage}>
           <img src={data.img} alt="project blog" />

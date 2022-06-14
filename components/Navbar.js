@@ -1,13 +1,17 @@
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.css'
-import { useState } from 'react';
-import { useStore } from '../storeZustand/store';
+import { useEffect, useState } from 'react'
+import { useStore } from '../storeZustand/store'
+import { useMediaQuery } from 'react-responsive'
 
 const Navbar = () => {
   const growCircle = useStore((state) => state.growCircle)
   const decreaseCircle = useStore((state) => state.decreaseCircle)
   const [open, setOpen] = useState(false)
-  
+  const isMobil = useMediaQuery({
+    query: '(max-width: 880px)'
+  })
+
   const handleClick = () => {
     setOpen(false)
   }
@@ -19,6 +23,16 @@ const Navbar = () => {
   const handleMouseLeave = () => {
     decreaseCircle()
   }
+
+  useEffect(() => {
+    const body = document.body
+
+    if (isMobil && open) {
+      body.style.overflowY ='hidden'
+    } else {
+      body.style.overflowY ='auto'
+    }
+  }, [isMobil, open])
 
   return (
     <nav className={styles.navbar}>
@@ -42,6 +56,7 @@ const Navbar = () => {
         onMouseEnter={handleEnter}
         onMouseLeave={handleMouseLeave}
       >
+        <div className={styles.decorationList}></div>
         <div className={styles.listNav}>
           <Link href="/">
             <a className={styles.linkNavbar}

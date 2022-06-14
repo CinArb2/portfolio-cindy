@@ -75,11 +75,27 @@
     background-color:hsla(0,0%,100%,1);
     background-image:
     radial-gradient(at 40% 0%, hsla(18,100%,85%,0.13) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(22,100%,77%,0.55) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsla(212,61%,74%,0.46) 0px, transparent 50%);
-      transform: translateX(100%);
-      transition: transform 400ms ease-in-out;
-    }
+    radial-gradient(at 0% 100%, hsla(22,100%,77%,0.55) 0px, transparent 50%);
+    transform: translateX(110%);
+    transition: transform 400ms ease-in-out;
+    margin: 1rem;
+    border: 1px solid var(--heading-color);
+  } 
+
+  .decorationList{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/paperBg.jpeg');
+    background-position: 50% 50%;
+    background-size: auto;
+    opacity: 0.3;
+    z-index: -2;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
 
   .listLinks.active{
     transform: translateX(0);
@@ -115,7 +131,7 @@
     }
 
     .menuHamb span:nth-of-type(1){
-    width:50%;
+    width:49%;
     }
 
     .menuHamb span:nth-of-type(2){
@@ -145,7 +161,7 @@
 
     .menuHamb .active:nth-of-type(3){
       transform-origin:bottom;
-      width:50%;
+      width:47%;
       transform: translate(21px, 0px) rotatez(45deg);
     }
 }

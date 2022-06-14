@@ -2,12 +2,16 @@ import styles from '../styles/About.module.css'
 import Icons from './Icons'
 import icons from '../helpers/Icons'
 import { useStore } from '../storeZustand/store';
+import { useMediaQuery } from 'react-responsive'
 
 const About = () => {
   const growCircle = useStore((state) => state.growCircle)
   const decreaseCircle = useStore((state) => state.decreaseCircle)
   const circleLight = useStore((state) => state.circleLight)
-const circleDark = useStore((state) => state.circleDark)  
+  const circleDark = useStore((state) => state.circleDark)
+  const isMobil = useMediaQuery({
+    query: '(max-width: 750px)'
+  })
 
   const handleEnter = () => {
     growCircle()
@@ -31,19 +35,17 @@ const circleDark = useStore((state) => state.circleDark)
       className={styles.wrapperAbout}
       id='about'>
       <div className={styles.containerAbout}>
-        <div className={styles.wrapperHeadingAbout}>
-          <h2 className={styles.heading}
-            onMouseEnter={handleEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            About
-          </h2>
+        <div className={styles.decoration}>
         </div>
         <div>
-          <div className={styles.decoration}></div>
+          <div className={styles.wrapperHeadingAbout}
+            onMouseEnter={handleEnter}
+            onMouseLeave={handleMouseLeave}
+          >  
+            <h2 className={styles.heading}>About</h2>
+          </div>
           <div className={styles.textAbout}>
-            <p>Hi Everyone, I am a Front End developer from Colombia, self-motivated learner with strong organization, time management and communication skills.</p>
-            <p>Although I graduated as an Industrial Engineer from university, I was always curious about the world of web development, and that is how about 1 year ago I embarked on this path of learning it.</p>
+            <p>Hi everyone, I am a Full-stack developer, who is always excited to build and learn. I consider myself a proactive person, with great attention to small details and the big picture too, a taste for good design and definitely a team player.  </p>
           </div>
         </div>
       </div>
@@ -55,11 +57,13 @@ const circleDark = useStore((state) => state.circleDark)
           onMouseEnter={handleDarkZoneEnter}
           onMouseLeave={handleDarkZoneLeaving}
         >
+          <div className={styles.slideTrack}>
           {
-            icons.map((iconInfo) => (
+              
+            (isMobil ? icons: [...icons, ...icons, ...icons]).map((iconInfo) => (
               <div
                 className={styles.iconCard}
-                key={iconInfo.id}
+                key={Math.random()*1000}
               >
                 <Icons
                   iconInfo={iconInfo}
@@ -67,6 +71,7 @@ const circleDark = useStore((state) => state.circleDark)
               </div>
             ))
           }
+          </div>
         </div>
       </div>
     </section>

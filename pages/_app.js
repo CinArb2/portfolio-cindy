@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <LoaderProvider>
         <Component {...pageProps} />
-     </LoaderProvider>
+    </LoaderProvider>
       )
 }
 

@@ -29,12 +29,12 @@ const Hero = () => {
             onMouseEnter={handleEnter}
             onMouseLeave={handleMouseLeave}
           >
-            Front-end developer
+            Full-Stack developer
           </h1>
-          <a href='/Resume.pdf' download
+          <a href='/resumeCindyF.pdf' download
             target="_blank" rel="noopener noreferrer"
           >
-            <Button >Download cv</Button>
+            <Button>Download cv</Button>
           </a>
           <Link href={"#contact"}>
             <a>

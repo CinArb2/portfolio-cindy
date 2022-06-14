@@ -8,7 +8,7 @@ import styles from '../styles/Home.module.css'
 import Cursor from '../components/Cursor'
 
 export default function Home({ devDotToPosts }) {
-
+  
   return (
     <>
       <div className={styles.container}>
@@ -24,7 +24,7 @@ export default function Home({ devDotToPosts }) {
           <Blog data={devDotToPosts}/>
         </Layout>
       </div>
-      <Cursor/>
+      <Cursor />
       <div className={styles.bgColor}></div>
       <div className={styles.bgImage}></div>
     </>
@@ -35,7 +35,7 @@ export const getStaticProps = async () => {
   const devDotToPosts = await fetch(
     `https://dev.to/api/articles?username=${process.env.DEV_USERNAME}`
   );
-  
+  console.log(process.env.DEV_USERNAME)
   const res = await devDotToPosts.json();
   return {
     props: {
