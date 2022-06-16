@@ -33,6 +33,7 @@ const projects = [
     id: 1,
     img: 'ibuyGifc.gif',
     tags: ['React', 'Redux', 'Node.js', 'Express', 'Firebase'],
+    demo: 'https://youtu.be/w6AZ9wZt8e4',
     folderInfo: 'Full Stack App',
     title: 'IBuy Marketplace',
     description: 'Built a fictional Marketplace App from Scratch.   For the backend side, I created the REST APIs with Express and use these endpoints in the React frontend to interact with our backend part. For the front end I used Redux for state management,  Firebase to handle product and shop images, and followed the best practices to implement Authentication using JSON Web Tokens (JWT).',

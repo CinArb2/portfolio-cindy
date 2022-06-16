@@ -35,6 +35,16 @@ const Project = ({ data}) => {
                   View site
               </Button>
             </a>
+
+            {
+              data.demo &&
+              <a href={data.demo} target="_blank" rel="noopener noreferrer">
+                <Button >
+                    View demo
+                </Button>
+              </a>
+            }
+            
           </div>
         </div>
       </div>
